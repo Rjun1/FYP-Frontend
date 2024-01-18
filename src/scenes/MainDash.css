@@ -1,0 +1,25 @@
+.MainDash{
+    display: grid;
+    grid-template-columns: auto 20rem;
+    gap: 10px;
+}
+.DashContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* Responsive to smaller screen size */
+@media screen and (max-width: 1200px) {
+    .DashContent{
+        justify-content:flex-start;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .DashContent{
+        align-items: center;
+    }
+}

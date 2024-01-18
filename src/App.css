@@ -1,0 +1,45 @@
+.App{
+  background: #f2fffb;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.AppGlass{
+  display: grid;
+  height:97%;
+  width: 97%;
+  border-radius: 2rem;
+  overflow: hidden;
+  grid-template-columns: 11rem auto ;
+  gap: 10px;
+}
+
+.link{
+  text-decoration: none;
+  color: #002212;
+}
+
+.logo>img{
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive to smaller screen size */
+@media screen and (max-width: 1200px) {
+  .AppGlass{
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .AppGlass{
+    grid-template-columns: 1fr;
+  } 
+  .AppGlass::-webkit-scrollbar{
+    display: none;
+  }
+}

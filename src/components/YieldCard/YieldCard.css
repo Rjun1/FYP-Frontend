@@ -1,0 +1,16 @@
+.YieldCard{
+    display: flex;
+    flex-direction: column;
+    /* height: 30px;
+    width: 30px; */
+    background: #FFF;
+    border-radius: 0.7rem;
+    height: 15rem;
+    width: 20rem;
+    box-shadow: 0px 5px 15px 0px #19302b28;
+    margin-top: 10px;
+}
+.YieldCard>Chart{
+    width: 30px;
+    height: 30px;
+}
