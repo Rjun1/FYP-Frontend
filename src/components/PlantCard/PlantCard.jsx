@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import {motion, AnimateSharedLayout} from 'framer-motion'
 import {CircularProgressbar} from 'react-circular-progressbar'
-import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 import 'react-circular-progressbar/dist/styles.css';
 import './PlantCard.css'
-import bokChoy from "../../imgs/bokChoy.png";
+
 import {
+  UilTimes,
   UilEstate,
   UilClipboardAlt,
   UilUsersAlt,
@@ -19,8 +19,16 @@ import {
   UilMedicalSquare,
   UilMedkit,
   UilHeartBreak,
-
 } from "@iconscout/react-unicons";
+import bokChoy from "../../imgs/bokChoy.png";
+import choySum from "../../imgs/choySum.jpeg";
+import kaiLan from "../../imgs/kaiLan.jpg";
+
+const color = [{ color: '#559f89'}, { color: '#fff'}, { color: '#FFF'}]
+const backgroundColor = ['#FFF', '#ffc9b4', '#ff6d71']
+const boxShadow = ["0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b41"]
+const icon = [<UilHeart/>, <UilMedicalSquare/>, <UilHeartBreak/>]
+
 function PlantCard({card}) {
 
     const [expanded, setExpanded] = useState(false)
@@ -47,23 +55,22 @@ function CompactCard({param, setExpanded}){
     return (
         <motion.div className="CompactCard"
         style={{
-            // background: param.color.background,
-            // boxShadow: param.color.boxShadow
+          backgroundColor: backgroundColor[getStatusIndex(param.status)],
+          // boxShadow: boxShadow[getStatusIndex(param.status)]
         }}
         onClick={setExpanded}
         layoutId='expandableCard'
         >
           <div className="plant-container">
-            <img src={bokChoy} alt="Plant Image" className="circular-image"/>
+            <img src={getPic(param.title)} alt="Plant Image" className="circular-image"/>
           </div>
           <div className="detail">
             <span>{param.title}</span>
-            <div className='status-container' style={{color: param.color}}>
-              {/* <Png /> */}
-              <UilHeartBreak />
+            <div className='status-container' style={ color[getStatusIndex(param.status)]}>
+              {icon[getStatusIndex(param.status)]}
               <span >{param.status}</span>
             </div>
-            <span>Last updated 1 Hour ago</span>
+            <span>Date planted: {param.plantDate}</span>
           </div>
       </motion.div>
     )
@@ -85,6 +92,32 @@ function ExpandedCard({ param, setExpanded }) {
         </motion.div>
         
     )
+}
+
+function getStatusIndex(status) {
+  switch (status) {
+    case 'Healthy':
+      return 0;
+    case 'Attention':
+      return 1;
+    case 'Critical':
+      return 2;
+    default:
+      return {};
+  }
+}
+
+function getPic(title) {
+  switch (title) {
+    case 'Bak Choy':
+      return bokChoy;
+    case 'Cai Xim':
+      return choySum;
+    case 'Kai Lan':
+      return kaiLan;
+    default:
+      return {};
+  }
 }
 
 export default PlantCard

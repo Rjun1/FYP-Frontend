@@ -50,11 +50,6 @@ export const SidebarData = [
 export const CardsData = [
     {
         title: "Bak Choy",
-        status: "Healthy",
-        color: "#559f89",
-        barValue: 70,
-        value: "25,970",
-        png: UilHeart,
         series: [
           {
             name: "Bak Choy",
@@ -66,11 +61,6 @@ export const CardsData = [
     
       {
         title: "Cai Xim",
-        status: "Attention",
-        color: "#ec978c",
-        barValue: 60,
-        value: "4,270",
-        png: UilMedicalSquare,
         series: [
           {
             name: "Cai Xim",
@@ -82,11 +72,6 @@ export const CardsData = [
     
       {
         title: "Kai Lan",
-        status: "Critical!",
-        color: "#ff6d71",
-        barValue: 70,
-        value: "25,970",
-        png: UilHeartBreak,
         series: [
           {
             name: "Kai Lan",
