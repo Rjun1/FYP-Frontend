@@ -34,8 +34,8 @@ export const SidebarData = [
 
     {
         icon: UilEstate,
-        heading: "Activity Summary",
-        route: "/ActivitySummary",
+        heading: "Calender",
+        route: "/Calender",
     },
 
     {

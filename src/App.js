@@ -2,6 +2,7 @@ import './App.css'
 import Sidebar from './scenes/Sidebar'
 import MainDash from './scenes/MainDash'
 import PlantDetails from './scenes/PlantDetails/PlantDetails'
+import Calender from './scenes/Calendar/Calendar'
 
 // Routing
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainDash />}/>
             <Route path="/PlantDetails" element={<PlantDetails />}/>
+            <Route path="/Calender" element={<Calender />}/>
           </Routes>
         </div>
       </div>
