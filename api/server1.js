@@ -1,9 +1,9 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('InventoryManagement.json'); // Change to your JSON file
+const router = jsonServer.router('Data.json'); // Change to your JSON file
 const middlewares = jsonServer.defaults();
 
-const PORT = 3001;
+const PORT = 4000;
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);

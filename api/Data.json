@@ -38,10 +38,18 @@
         }
     ],
     "tasks": [
-        {
-          "id": "e8db",
-          "type": "manual",
-          "content": "20 Jan 03:30 PM: test123"
-        }
+      {
+        "id": "1705977814422",
+        "type": "manual",
+        "content": "23 Jan 10:30 AM: test"
+      }
+    ],
+    "inventoryItems": [
+      {
+        "id": "a84e",
+        "item": "test",
+        "quantity": "123",
+        "location": "123"
+      }
     ]
 }

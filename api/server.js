@@ -1,6 +1,6 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('Schedule.json');
+const router = jsonServer.router('Data.json');
 const middlewares = jsonServer.defaults();
 
 const PORT = 4000;
