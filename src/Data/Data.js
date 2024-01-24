@@ -40,8 +40,8 @@ export const SidebarData = [
 
     {
         icon: UilChart,
-        heading: "Analytics",
-        route: "/Analytics",
+        heading: "Inventory Management",
+        route: "/InventoryManagement",
     },
 
 ]

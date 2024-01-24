@@ -1,0 +1,63 @@
+.inventory-container {
+    display: absolute;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .table-container {
+    width: 80%;
+  }
+  
+  /* Add these styles to your CSS file */
+.table-scroll-container {
+  max-height: 400px; /* Adjust the max height according to your preference */
+  overflow-y: auto;
+}
+
+/* Add these styles to your CSS file */
+.search-container {
+  margin-bottom: 16px; /* Adjust the margin according to your preference */
+}
+
+
+
+
+
+
+
+/* Update your CSS file
+.inventory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  margin-left: auto;
+}
+
+.table-container {
+  width: 80%;
+}
+
+.table-scroll-container {
+  max-height: 400px;
+  overflow-y: auto;
+} */
