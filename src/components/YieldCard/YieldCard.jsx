@@ -1,66 +1,93 @@
-import React from 'react'
-import Chart from "react-apexcharts";
+import React, { useState } from 'react'
 import './YieldCard.css'
 
+// import * as React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Checkbox from '@mui/material/Checkbox';
+import { BarChart} from '@mui/x-charts/BarChart';
+
+
+const yieldFormatter = (value) => `${value}kg`;
+
 const YieldCard = () => {
-    const data = {
-      series: [
-        {
-          name: "Yield",
-          data: [10, 50, 130, 190, 240, 250, 300],
-        },
-      ],
-      options: {
-        chart: {
-          type: "area",
-          height: "auto",
-        },
-  
-        fill: {
-          colors: ["#fff"],
-          type: "gradient",
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        stroke: {
-          curve: "smooth",
-          colors: ["#081C15"],
-        },
-        tooltip: {
-          x: {
-            format: "dd/MM/yy HH:mm",
-          },
-        },
-        grid: {
-          show: false,
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "2018-09-19T00:00:00.000Z",
-            "2018-09-20T01:30:00.000Z",
-            "2018-09-21T02:30:00.000Z",
-            "2018-09-22T03:30:00.000Z",
-            "2018-09-23T04:30:00.000Z",
-            "2018-09-24T05:30:00.000Z",
-            "2018-09-25T06:30:00.000Z",
-          ],
-        },
-        yaxis: {
-          show: false
-        },
-        toolbar:{
-          show: false
-        }
-      },
-    };
-    return (
-        <div className="YieldCard">
-            <span>Yield</span>
-            <Chart options={data.options} series={data.series} type="area" />
-        </div>
-    )
+
+  const [data, setData] = useState(data1);
+
+  const handleData1Click = () => {
+    setData(data1);
   };
+
+  const handleData2Click = () => {
+    setData(data2);
+  };
+
+    return (
+      <div className="YieldCard">
+        <div className='YieldTopBar'>
+          <span className='Title'>Yield</span>
+          <div className='Buttons'>
+            <button onClick={handleData1Click}>Monthly</button>
+            <button onClick={handleData2Click}>Weekly</button>
+          </div>
+        </div>
+        <Box sx={{ width: '100%' }}>
+          <BarChart
+            height={200}
+            dataset={data}
+            xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+            series={[
+              { dataKey: 'yield', label: 'Yield', valueFormatter: yieldFormatter },
+            ]}
+            slots={{
+              bar: (props) => {
+                const { style } = props;
+                const str = JSON.stringify(style);
+                const arr = JSON.parse(str);
+                const { x, y, height, width } = arr;
+    
+                const radius = 10;
+
+                // SVG path for bar shape
+                const d = `M${x},${y + radius}
+                  A${radius},${radius} 0 0 1 ${x + radius},${y}
+                  L${x + width - radius},${y}
+                  A${radius},${radius} 0 0 1 ${x + width},${y + radius}
+                  L${x + width},${y + height}
+                  L${x},${y + height}
+                  Z`;
+                return <path d={d} fill='#FFCC7A'></path>;
+              },
+            }}
+            colors={['#FFCC7A']}
+            slotProps={{ legend: { hidden: true } }}
+            margin={{bottom:30, top:10, left:40, right:40}}
+        />
+        </Box>
+        
+    </div>
+    );
+  }
+
+const data1 = [
+  { month: 'Jan', yield: 10 },
+  { month: 'Feb', yield: 20 },
+  { month: 'Mar', yield: 30 },
+  { month: 'Apr', yield: 30 },
+  { month: 'May', yield: 20 },
+  { month: 'Jun', yield: 10 },
+  { month: 'Jul', yield: 30 },
+  { month: 'Aug', yield: 20 },
+  { month: 'Sep', yield: 10 },
+  { month: 'Oct', yield: 0 },
+  { month: 'Nov', yield: 30 },
+  { month: 'Dec', yield: 20 },
+];
+
+const data2 = [
+  { month: '1 Jan - 7 Jan', yield: 30 },
+  { month: '8 Jan - 14 Jan', yield: 20 },
+  { month: '15 Jan - 21 Jan', yield: 10 },
+];
 
 export default YieldCard

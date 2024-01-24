@@ -40,7 +40,6 @@ function PlantCard({card}) {
                 <ExpandedCard param={card} setExpanded={() => setExpanded(false)} /> :
                 <CompactCard param = {card} setExpanded={()=>setExpanded(true)}/>
             }
-            {/* <div>{card.title}</div> */}
         </AnimateSharedLayout>
         
     )
@@ -50,8 +49,6 @@ function PlantCard({card}) {
 
 // Compact Card
 function CompactCard({param, setExpanded}){
-    // const Png = param.png; // Icon
-    // const Img = param.img;
     return (
         <motion.div className="CompactCard"
         style={{
@@ -109,9 +106,9 @@ function getStatusIndex(status) {
 
 function getPic(title) {
   switch (title) {
-    case 'Bak Choy':
+    case 'Bok Choy':
       return bokChoy;
-    case 'Cai Xim':
+    case 'Choy Sum':
       return choySum;
     case 'Kai Lan':
       return kaiLan;

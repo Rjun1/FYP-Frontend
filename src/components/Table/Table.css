@@ -1,29 +1,22 @@
+.Table{
+    box-shadow: 5px 5px 15px 0px #19302b3b;
+}
 .MuiTableRow-root > * {
     padding: 10px;
 }
 
-.MuiTableRow-root.MuiTableRow-head > * {
-    font-weight: bold !important;
-}
+/* .MuiTableRow-root.MuiTableRow-head > * {
+    font-weight: bold;
+} */
 
-.Table td, th {
-    border: none !important;
+.TableHead{
+    background-color: #83ceb7;
 }
-
-.Table:first-child {
-    border-radius: 0.7rem !important;
+.TableHeadCell>TableRow>TableCell{
+    color: blueviolet;
 }
-.status {
-    padding: 8px;
-    border-radius: 9px;
-}
-
-.Details {
-    color: #00b5ff !important;
-}
-
 /* Responsive to smaller screen size */
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .Table {
       width: 170%;
       margin-top: 2rem;
@@ -38,4 +31,4 @@
       align-items: center;
       width: 23rem;
     }
-}
+} */

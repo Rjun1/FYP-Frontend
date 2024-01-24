@@ -2,12 +2,12 @@
     "PlantData": [    
         {
         "id": 1,
-        "title": "Bak Choy",
+        "title": "Bok Choy",
         "status": "Healthy",
         "plantDate": "1 Jan 2024",
         "series": [
             {
-              "name": "Bak Choy",
+              "name": "Bok Choy",
               "data": [31, 40, 28, 51, 42, 109, 100]
             }
           ]       
@@ -16,7 +16,7 @@
         "id": 2,
         "title": "Choy Sum",
         "status": "Attention",
-        "plantDate": "1 Jan 2024",
+        "plantDate": "2 Jan 2024",
         "series": [
             {
               "name": "Choy Sum",
@@ -28,13 +28,20 @@
         "id": 3,
         "title": "Kai Lan",
         "status": "Critical",
-        "plantDate": "1 Jan 2024",
+        "plantDate": "4 Jan 2024",
         "series": [
             {
               "name": "Kai Lan",
               "data": [31, 40, 28, 51, 42, 109, 100]
             }
           ]
+        }
+    ],
+    "tasks": [
+        {
+          "id": "e8db",
+          "type": "manual",
+          "content": "20 Jan 03:30 PM: test123"
         }
     ]
 }

@@ -1,0 +1,39 @@
+.StatsCard{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 0.7rem;
+    color: #032917;
+    position: relative;
+    padding: 1rem;
+    background: #FFF;
+    box-shadow: 5px 5px 15px 0px #19302b28;
+}
+.LeftSide{
+    display: flex;
+    gap: 10px;
+}
+.Animation{
+    display: flex;
+    height: 70px;
+}
+.StatsTitle{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.Value{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.Value>span:nth-child(1){
+    font-size: 35px;
+    /* font-weight: bold; */
+}
+.Value>span:nth-child(2){
+    font-size: 15px;
+}

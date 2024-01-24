@@ -1,7 +1,7 @@
 .Cards{
     display:flex;
+    flex: 1;
     gap: 10px;
-
 }
 
 .parentContainer{

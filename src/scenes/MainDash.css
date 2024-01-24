@@ -6,8 +6,32 @@
 .DashContent{
     display: flex;
     flex-direction: column;
+    gap: 15px;
     justify-content: space-evenly;
 }
+.Stats-Row{
+    display: flex;
+    flex: 2;
+    gap: 10px;
+    /* width: 100%; */
+}
+.Stats-Cards{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* Responsive to bigger screen size */
+/* @media screen and (min-height: 1200px) {
+    .DashContent{
+        justify-content:flex-start;
+        margin-top: 2rem;
+    }
+} */
+
 
 /* Responsive to smaller screen size */
 @media screen and (max-width: 1200px) {

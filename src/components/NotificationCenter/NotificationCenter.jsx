@@ -7,7 +7,7 @@ const NotificationCenter = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:4001/tasks');
+      const response = await fetch('http://localhost:4000/tasks');
       if (!response.ok) {
         throw new Error(`Failed to fetch tasks. Status: ${response.status}`);
       }
