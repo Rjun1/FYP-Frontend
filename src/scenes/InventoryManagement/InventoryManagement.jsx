@@ -15,7 +15,7 @@ const InventoryManagement = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/inventoryItems');
+        const response = await axios.get('http://localhost:4000/inventoryItems');
         setInventoryItems(response.data);
       } catch (error) {
         console.error('Error fetching inventory items:', error.message);
@@ -27,7 +27,7 @@ const InventoryManagement = () => {
 
   const handleAddItem = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/inventoryItems', newItem);
+      const response = await axios.post('http://localhost:4000/inventoryItems', newItem);
       setInventoryItems([...inventoryItems, response.data]);
       setNewItem({ item: '', quantity: '', location: '' });
     } catch (error) {

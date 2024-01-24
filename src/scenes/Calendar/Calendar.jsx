@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Badge, Calendar, Modal, Form, Input, Button, DatePicker, TimePicker } from 'antd';
 import './Calendar.css';
 
-const API_BASE_URL = 'http://localhost:4001';
+const API_BASE_URL = 'http://localhost:4000';
 
 const addTaskToServer = async (newTask) => {
   try {
