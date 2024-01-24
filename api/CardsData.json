@@ -1,40 +1,43 @@
 {
-    "PlantData": [    
-        {
-        "id": 1,
-        "title": "Bak Choy",
-        "status": "Healthy",
-        "plantDate": "1 Jan 2024",
-        "series": [
-            {
-              "name": "Bak Choy",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
+  "PlantData": [    
+      {
+          "id": 1,
+          "title": "Bak Choy",
+          "status": "Healthy",
+          "color": "#559f89",
+          "img": "../imgs/bokChoy.png" ,
+          "series": [
+              {
+                  "name": "Bak Choy",
+                  "data": [31, 40, 28, 51, 42, 109, 100]
+              }
           ]       
-        },
-        {
-        "id": 2,
-        "title": "Cai Xim",
-        "status": "Attention",
-        "plantDate": "1 Jan 2024",
-        "series": [
-            {
-              "name": "Cai Xim",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
+      },
+      {
+          "id": 2,
+          "title": "Cai Xim",
+          "status": "Attention",
+          "color": "#ffc9b4",
+          "img": "choySum",
+          "series": [
+              {
+                  "name": "Cai Xim",
+                  "data": [31, 40, 28, 51, 42, 109, 100]
+              }
           ]
-        },
-        {
-        "id": 3,
-        "title": "Kai Lan",
-        "status": "Critical",
-        "plantDate": "1 Jan 2024",
-        "series": [
-            {
-              "name": "Kai Lan",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
+      },
+      {
+          "id": 3,
+          "title": "Kai Lan",
+          "status": "Critical!",
+          "color": "#ff6d71",
+          "img": "kaiLan",
+          "series": [
+              {
+                  "name": "Kai Lan",
+                  "data": [31, 40, 28, 51, 42, 109, 100]
+              }
           ]
-        }
-    ]
+      }
+  ]
 }

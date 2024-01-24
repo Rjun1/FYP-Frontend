@@ -31,13 +31,18 @@ const NotificationCenter = () => {
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(fetchInterval);
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
+
+  // Sort tasks by date before rendering ( NOT WORKING!!!!! NEED TO DEBUG)
+  const sortedTasks = [...tasks].sort((a, b) => new Date(a.date) - new Date(b.date));
 
   return (
     <div className="NotificationCenter">
       <div>
         <h3>Schedule</h3>
-        <Schedule tasks={tasks} />
+        <div className="Schedule">
+          <Schedule tasks={sortedTasks} />
+        </div>
       </div>
       <div>
         <h3>Alerts</h3>
