@@ -19,8 +19,8 @@ return (
             <div className='Stats-Row'>
                 <YieldCard/>
                 <div className='Stats-Cards'>
-                    <StatsCard animationData={energyAnimation} title='Energy Usage' value='38.8' unit='kwh/kg'/>
-                    <StatsCard animationData={carbonAnimation} title='Carbon Footprint' value='18.4' unit='kg'/>
+                    <StatsCard animationData={energyAnimation} title='Energy Usage' value='38.8' unit='kwh'/>
+                    <StatsCard animationData={carbonAnimation} title='Carbon Footprint' value='18.4' unit='kgCO2e'/>
                 </div>
             </div>
             

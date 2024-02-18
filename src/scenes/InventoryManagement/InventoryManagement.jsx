@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, Button, Dialog, DialogTitle, DialogContent, DialogActions, Radio, RadioGroup, FormControlLabel } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  TextField,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Box
+} from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import RemoveIcon from '@mui/icons-material/Remove';
 import './InventoryManagement.css';
 
 const InventoryManagement = () => {
@@ -11,6 +31,7 @@ const InventoryManagement = () => {
   const [editQuantity, setEditQuantity] = useState('');
   const [editAction, setEditAction] = useState('add'); // 'add' or 'remove'
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [filterCriteria, setFilterCriteria] = useState('all'); // Default filter
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +45,19 @@ const InventoryManagement = () => {
 
     fetchData();
   }, []);
+
+  // Filter items based on criteria
+  const filteredItems = () => {
+    if (filterCriteria === 'all') {
+      return inventoryItems;
+    } else if (filterCriteria === 'lowStock') {
+      return inventoryItems.filter(item => parseInt(item.quantity, 10) < 10);
+    } else if (filterCriteria === 'outOfStock') {
+      return inventoryItems.filter(item => parseInt(item.quantity, 10) === 0);
+    }
+
+    // Add more filter conditions as needed
+  };
 
   const handleAddItem = async () => {
     try {
@@ -63,15 +97,6 @@ const InventoryManagement = () => {
 
   return (
     <div className="inventory-container">
-      <div className="search-container">
-        <TextField
-          label="Search Item"
-          variant="outlined"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-
       <div className="form-container">
         <TextField
           label="Item"
@@ -95,36 +120,57 @@ const InventoryManagement = () => {
         <Button variant="contained" color="primary" onClick={handleAddItem}>
           Add Item
         </Button>
+
+        <TextField
+          label="Search Item"
+          variant="outlined"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+
+        {/* Filter dropdown */}
+        <select
+          value={filterCriteria}
+          onChange={(e) => setFilterCriteria(e.target.value)}
+        >
+          <option value="all">All Items</option>
+          <option value="lowStock">Low Stock</option>
+          <option value="outOfStock">Out of Stock</option>
+
+        </select>
       </div>
 
       <div className="table-scroll-container">
-        <TableContainer component={Paper} className="table-container">
-          <Table aria-label="inventory table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Item</TableCell>
-                <TableCell align="right">Quantity</TableCell>
-                <TableCell align="right">Location</TableCell>
-                <TableCell align="right">Actions</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {inventoryItems
-                .filter((item) => item.item.toLowerCase().includes(searchTerm.toLowerCase()))
-                .map((item, index) => (
-                  <TableRow key={index}>
-                    <TableCell component="th" scope="row">{item.item}</TableCell>
-                    <TableCell align="right">{item.quantity}</TableCell>
-                    <TableCell align="right">{item.location}</TableCell>
-                    <TableCell align="right">
-                      <Button onClick={() => handleRemoveItem(index)}>Remove</Button>
-                      <Button onClick={() => openEditDialog(index)}>Edit Quantity</Button>
-                    </TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        {/* Wrap TableContainer with Box and add boxShadow */}
+        <Box boxShadow={3} p={3} borderRadius={8} bgcolor="background.paper" className="table-container">
+          <TableContainer component={Paper}>
+            <Table aria-label="inventory table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Item</TableCell>
+                  <TableCell align="right">Quantity</TableCell>
+                  <TableCell align="right">Location</TableCell>
+                  <TableCell align="right">Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {filteredItems()
+                  .filter((item) => item.item.toLowerCase().includes(searchTerm.toLowerCase()))
+                  .map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell component="th" scope="row">{item.item}</TableCell>
+                      <TableCell align="right">{item.quantity}</TableCell>
+                      <TableCell align="right">{item.location}</TableCell>
+                      <TableCell align="right">
+                        <Button onClick={() => handleRemoveItem(index)}><RemoveIcon /></Button>
+                        <Button onClick={() => openEditDialog(index)}><EditIcon /></Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       </div>
 
       {/* Edit Quantity Dialog */}

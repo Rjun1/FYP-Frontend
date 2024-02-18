@@ -43,3 +43,142 @@
     display: none;
   }
 }
+
+
+
+
+
+
+
+
+
+.chat-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; 
+}
+
+.chat-button {
+  background-color: #5ccc9d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 40px;
+  
+}
+
+.chat-button:hover {
+  background-color: #4ab38e;
+}
+
+.chatbot-popup {
+  position: fixed;
+  bottom: 70px;
+  right: 50px; 
+  width: 300px; 
+  height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.react-chatbot-kit-chat-container {
+  background-color: #f4f4f4; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.react-chatbot-kit-chat-inner-container {
+  padding: 20px; 
+}
+
+.react-chatbot-kit-chat-header {
+  background-color: #5ccc9d; 
+  color: white; 
+  border-radius: 10px;
+  height: 25px;
+}
+
+.react-chatbot-kit-chat-input-container {
+  margin-top: 10px; 
+}
+
+.react-chatbot-kit-chat-input {
+  border-radius: 20px;
+  padding: 10px 20px; 
+  background-color: #ffffff; 
+}
+
+
+.react-chatbot-kit-chat-bot-message-container {
+  margin-top: 10px; 
+}
+
+
+.react-chatbot-kit-user-avatar {
+  width: 30px;
+  height: 30px; 
+  margin-top: 0px;
+  margin-left: 200px;
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+  display: none;
+}
+
+
+
+.react-chatbot-kit-chat-bot-message {
+  background-color: #5ccc9d; 
+  color: white; 
+  border-radius: 10px; 
+  padding: 10px 15px; 
+  margin-right: auto; 
+  margin-left: 20px; 
+}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.react-chatbot-kit-chat-btn-send {
+  background-color: #5ccc9d; 
+  background-color: white; 
+  color: white; 
+  border: none; 
+  /* border-radius: 20px;  */
+  padding: 2px 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  position: relative; 
+}
+
+.react-chatbot-kit-chat-btn-send:hover {
+  background-color: #4ab38e; 
+}
+
+.react-chatbot-kit-chat-btn-send::after {
+  content: ''; 
+  position: absolute; 
+  top: 50%; 
+  right: 15px; 
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent; 
+  border-bottom: 6px solid transparent; 
+  border-left: 8px solid white; 
+  transform: translateY(-50%); 
+}
+

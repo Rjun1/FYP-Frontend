@@ -1,55 +1,279 @@
 {
-    "PlantData": [    
+  "PlantData": [
+    {
+      "id": "1",
+      "title": "Bok Choy",
+      "status": "Healthy",
+      "plantDate": "1 Jan 2024",
+      "series": [
         {
-        "id": 1,
-        "title": "Bok Choy",
-        "status": "Healthy",
-        "plantDate": "1 Jan 2024",
-        "series": [
-            {
-              "name": "Bok Choy",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
-          ]       
-        },
-        {
-        "id": 2,
-        "title": "Choy Sum",
-        "status": "Attention",
-        "plantDate": "2 Jan 2024",
-        "series": [
-            {
-              "name": "Choy Sum",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
-          ]
-        },
-        {
-        "id": 3,
-        "title": "Kai Lan",
-        "status": "Critical",
-        "plantDate": "4 Jan 2024",
-        "series": [
-            {
-              "name": "Kai Lan",
-              "data": [31, 40, 28, 51, 42, 109, 100]
-            }
+          "name": "Bok Choy",
+          "data": [
+            31,
+            40,
+            28,
+            51,
+            42,
+            109,
+            100
           ]
         }
-    ],
-    "tasks": [
-      {
-        "id": "1705977814422",
-        "type": "manual",
-        "content": "23 Jan 10:30 AM: test"
-      }
-    ],
-    "inventoryItems": [
-      {
-        "id": "a84e",
-        "item": "test",
-        "quantity": "123",
-        "location": "123"
-      }
-    ]
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Choy Sum",
+      "status": "Attention",
+      "plantDate": "2 Jan 2024",
+      "series": [
+        {
+          "name": "Choy Sum",
+          "data": [
+            31,
+            40,
+            28,
+            51,
+            42,
+            109,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Kai Lan",
+      "status": "Critical",
+      "plantDate": "4 Jan 2024",
+      "series": [
+        {
+          "name": "Kai Lan",
+          "data": [
+            31,
+            40,
+            28,
+            51,
+            42,
+            109,
+            100
+          ]
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1705977814422",
+      "type": "manual",
+      "content": "23 Jan 10:30 AM: test"
+    },
+    {
+      "id": "1706234862612",
+      "type": "manual",
+      "content": "26 Jan 10:00 AM: Test1"
+    },
+    {
+      "id": "1706234874517",
+      "type": "manual",
+      "content": "26 Jan 10:00 AM: Test2"
+    },
+    {
+      "id": "1706234885896",
+      "type": "manual",
+      "content": "26 Jan 10:00 AM: test123"
+    },
+    {
+      "id": "1706234985388",
+      "type": "manual",
+      "content": "26 Jan 10:00 AM: Test4"
+    },
+    {
+      "id": "1706234999857",
+      "type": "manual",
+      "content": "26 Jan 10:00 AM: Test 5"
+    },
+    {
+      "id": "1706236712258",
+      "type": "manual",
+      "content": "26 Jan 10:30 AM: test"
+    },
+    {
+      "id": "1706415625091",
+      "type": "manual",
+      "content": "28 Jan 12:15 PM: 123"
+    },
+    {
+      "id": "1706416043126",
+      "type": "manual",
+      "content": "28 Jan 12:15 PM: 123"
+    },
+    {
+      "id": "1706416076141",
+      "type": "manual",
+      "content": "28 Jan 12:15 PM: 123"
+    },
+    {
+      "id": "1706416124546",
+      "type": "manual",
+      "content": "28 Jan 12:15 PM: 123"
+    },
+    {
+      "id": "1706416231997",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: 123"
+    },
+    {
+      "id": "1706416257788",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: 123"
+    },
+    {
+      "id": "1706416514300",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: 123"
+    },
+    {
+      "id": "1706416600931",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: 123"
+    },
+    {
+      "id": "1706416693144",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: test123"
+    },
+    {
+      "id": "1706416711917",
+      "type": "manual",
+      "content": "28 Jan 12:30 PM: asd"
+    },
+    {
+      "id": "1706417210670",
+      "type": "manual",
+      "content": "28 Jan 12:45 PM: 123"
+    },
+    {
+      "id": "1706417342041",
+      "type": "manual",
+      "content": "28 Jan 12:45 PM: test123"
+    },
+    {
+      "id": "1706417358377",
+      "type": "manual",
+      "content": "28 Jan 12:45 PM: test"
+    },
+    {
+      "id": "1706417450481",
+      "type": "manual",
+      "content": "28 Jan 12:45 PM: 123"
+    },
+    {
+      "id": "1706448823305",
+      "type": "manual",
+      "content": "29 Jan 09:30 PM: 123"
+    },
+    {
+      "id": "1707740289815",
+      "type": "manual",
+      "content": "13 Feb 08:15 PM: 123"
+    }
+  ],
+  "inventoryItems": [
+    {
+      "id": "a84e",
+      "item": "test",
+      "quantity": "123",
+      "location": "123"
+    },
+    {
+      "id": "55e8",
+      "item": "Plant Seed 1",
+      "quantity": "100",
+      "location": "Shelf A"
+    },
+    {
+      "id": "f596",
+      "item": "Plant Seed 2",
+      "quantity": "200",
+      "location": "Shelf B"
+    },
+    {
+      "id": "9725",
+      "item": "Plant Seed 3",
+      "quantity": "300",
+      "location": "Shelf C"
+    },
+    {
+      "id": "fd33",
+      "item": "Plant Seed 4",
+      "quantity": "400",
+      "location": "Shelf D"
+    },
+    {
+      "id": "3262",
+      "item": "Mizuna Seed",
+      "quantity": "500",
+      "location": "Company Store Room"
+    },
+    {
+      "id": "14a7",
+      "item": "test",
+      "quantity": "9",
+      "location": "1"
+    },
+    {
+      "id": "ce43",
+      "item": "seed A",
+      "quantity": "11",
+      "location": "cvb"
+    },
+    {
+      "id": "42be",
+      "item": "Seed B",
+      "quantity": "0",
+      "location": "shelf Z"
+    },
+    {
+      "id": "b245",
+      "item": "seed a",
+      "quantity": "123",
+      "location": "123"
+    },
+    {
+      "id": "3c6d",
+      "item": "seed b",
+      "quantity": "123",
+      "location": "123"
+    },
+    {
+      "id": "3c23",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    },
+    {
+      "id": "c927",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    },
+    {
+      "id": "6811",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    },
+    {
+      "id": "7102",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    },
+    {
+      "id": "fa75",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    }
+  ]
 }
