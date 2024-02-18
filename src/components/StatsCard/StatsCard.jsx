@@ -2,8 +2,6 @@ import React from 'react'
 import "./StatsCard.css"
 
 import Lottie from "lottie-react"
-import energyAnimation from "../../assets/animation/energy-animation.json"
-import { display, height, width } from '@mui/system'
 
 const StatsCard = (props) => {
   return (

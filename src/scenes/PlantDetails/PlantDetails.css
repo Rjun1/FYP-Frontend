@@ -14,4 +14,37 @@
     border: 1px solid #d9d9d9;
     border-radius: 4px;
   }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
   
+.PlantDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* justify-content: space-evenly; */
+}
+
+.batch-tab {
+  border-bottom: 1px solid #2133284d;
+}
+.batch-button {
+  margin-left: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.batch-button:hover {
+  cursor: pointer;
+  background-color: #83ceb7;
+  border-radius: 20px;
+}
+
+.batch-button.active {
+  background-color: #83ceb7;
+  box-shadow: inset 3px 3px 5px 0px #0e221e51;
+  /* border-radius: 10px; */
+}

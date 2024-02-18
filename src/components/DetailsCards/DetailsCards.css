@@ -1,0 +1,9 @@
+.DetailsCards {
+    /* display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 15px */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 15px; /* Adjust the gap between items as needed */
+}

@@ -46,12 +46,12 @@
     cursor: pointer;
 }
 
-.active{
+.menuItem.active{
     background: #83ceb7;
     margin-left: 0;
 }
 
-.active::before{
+.menuItem.active::before{
     content:'';
     width: 8px;
     height: 100%;

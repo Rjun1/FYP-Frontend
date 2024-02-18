@@ -16,6 +16,7 @@ function App() {
           <Sidebar/>
           <Routes>
             <Route path="/" element={<MainDash />}/>
+            <Route path="/PlantDetails" element={<PlantDetails />}/>
             <Route path="/Calender" element={<Calender />}/>
             <Route path="/InventoryManagement" element={<InventoryManagement />}/>
           </Routes>

@@ -1,0 +1,79 @@
+{
+    "success": 1,
+    "result": [ 
+      {
+        "Datetime": "2024-02-14T22:53:31.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.5,
+        "Humidity": 60,
+        "Brightness": 500,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      },
+      {
+        "Datetime": "2024-02-14T23:16:35.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.8,
+        "Humidity": 65,
+        "Brightness": 200,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      },
+      {
+        "Datetime": "2024-02-15T00:09:55.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.5,
+        "Humidity": 80,
+        "Brightness": 90,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      },
+      {
+        "Datetime": "2024-02-15T01:09:55.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.3,
+        "Humidity": 78,
+        "Brightness": 100,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      },
+      {
+        "Datetime": "2024-02-15T02:09:55.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.6,
+        "Humidity": 67,
+        "Brightness": 100,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      },
+      {
+        "Datetime": "2024-02-15T03:09:55.000Z",
+        "MicrocontrollerID": "ZASDF",
+        "PlantBatchId": 1,
+        "Temperature": 25.5,
+        "Humidity": 60,
+        "Brightness": 150,
+        "pH": 8.16,
+        "CO2": 640,
+        "EC": 1.7,
+        "TDS": 1300
+      }
+    ]
+  }
+  
+    
