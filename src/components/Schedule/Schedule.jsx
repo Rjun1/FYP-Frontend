@@ -37,27 +37,26 @@ const Schedule = ({ tasks }) => {
 export default Schedule;
 
 
-
 // import React, { useState } from 'react';
 // import DoneIcon from '@mui/icons-material/Done';
 
 // const Schedule = ({ tasks }) => {
-//   const [updatedTasks, setUpdatedTasks] = useState(tasks);
+//   const [taskList, setTaskList] = useState(tasks);
 
 //   const handleDone = (taskId) => {
-//     // Update the tasks array to exclude the task that is marked as done
-//     const updatedTasksList = updatedTasks.filter((task) => task.id !== taskId);
-//     setUpdatedTasks(updatedTasksList);
+//     // Filter out the task with the specified ID
+//     const updatedTasks = taskList.filter(task => task.id !== taskId);
 
-//     // Add logic to handle the "Done" action, e.g., update the task status in the backend
+//     // Update the state with the filtered tasks
+//     setTaskList(updatedTasks);
 
-//     // For now, let's just log a message to the console
+//     // You can also add logic here to update the task status in the backend
 //     console.log(`Task ${taskId} marked as done!`);
 //   };
 
 //   return (
 //     <div className="ScheduleContainer">
-//       {updatedTasks.map((task) => (
+//       {taskList.map((task) => (
 //         <div key={task.id} className={`task-item ${task.done ? 'done' : ''}`}>
 //           <div>{task.date}</div>
 //           {task.type === 'manual' ? (
@@ -73,7 +72,6 @@ export default Schedule;
 //               style={{ cursor: 'pointer', marginLeft: '10px' }}
 //               onClick={() => handleDone(task.id)}
 //             />
-//             // You can customize the DoneIcon with additional styles or props
 //           )}
 //         </div>
 //       ))}
@@ -82,4 +80,3 @@ export default Schedule;
 // };
 
 // export default Schedule;
-

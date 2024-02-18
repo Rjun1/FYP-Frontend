@@ -22,7 +22,6 @@ const addTaskToServer = async (newTask) => {
     console.log('Task added successfully:', responseData);
   } catch (error) {
     console.error('Error adding task:', error.message);
-    // Handle error, e.g., show an error message to the user
   }
 };
 
@@ -44,7 +43,6 @@ const removeTaskFromServer = async (taskId) => {
     console.log('Task deleted successfully:', responseData);
   } catch (error) {
     console.error('Error deleting task:', error.message);
-    // Handle error, e.g., show an error message to the user
   }
 };
 
@@ -53,7 +51,7 @@ const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [deleteConfirmationVisible, setDeleteConfirmationVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [form] = Form.useForm(); // Use Ant Design Form hook
+  const [form] = Form.useForm();
 
   useEffect(() => {
     // Load manual events from localStorage on component mount
@@ -65,7 +63,7 @@ const App = () => {
 
   const showModal = () => {
     setIsModalVisible(true);
-    form.resetFields(); // Reset form fields when the modal is opened
+    form.resetFields();
   };
 
   const handleOk = () => {
@@ -85,11 +83,10 @@ const App = () => {
   const handleDeleteEvent = async () => {
     try {
       const { event, date } = selectedEvent;
-      const taskId = event.id; // Assuming each event has a unique identifier
+      const taskId = event.id;
 
       console.log('Deleting task with ID:', taskId);
 
-      // Remove the event from manualEvents state
       setManualEvents((prevEvents) => {
         const updatedEvents = { ...prevEvents };
         const dateKey = date.format('YYYY-MM-DD');
@@ -97,8 +94,13 @@ const App = () => {
         return updatedEvents;
       });
 
-      // Save the updated manual events to localStorage
-      localStorage.setItem('manualEvents', JSON.stringify(manualEvents));
+      // Use the state returned by setManualEvents in the callback
+      setManualEvents((updatedEvents) => {
+        // Save the updated manual events to localStorage
+        localStorage.setItem('manualEvents', JSON.stringify(updatedEvents));
+
+        return updatedEvents;
+      });
 
       // Remove the task from the server
       await removeTaskFromServer(taskId);
@@ -106,7 +108,6 @@ const App = () => {
       setDeleteConfirmationVisible(false);
     } catch (error) {
       console.error('Error deleting event:', error.message);
-      // Handle error, e.g., show an error message to the user
     }
   };
 
@@ -116,7 +117,7 @@ const App = () => {
 
       const dateKey = date.format('YYYY-MM-DD');
       const newTask = {
-        id: Date.now().toString(), // Using the current timestamp as a simple unique ID
+        id: Date.now().toString(),
         type: 'manual',
         content: `${date.format('D MMM')} ${time.format('hh:mm A')}: ${task}`,
       };
@@ -131,8 +132,13 @@ const App = () => {
         return updatedEvents;
       });
 
-      // Save the updated manual events to localStorage
-      localStorage.setItem('manualEvents', JSON.stringify(manualEvents));
+      // Use the state returned by setManualEvents in the callback
+      setManualEvents((updatedEvents) => {
+        // Save the updated manual events to localStorage
+        localStorage.setItem('manualEvents', JSON.stringify(updatedEvents));
+
+        return updatedEvents;
+      });
 
       // Add the task to the server
       await addTaskToServer(newTask);
@@ -140,7 +146,6 @@ const App = () => {
       setIsModalVisible(false);
     } catch (error) {
       console.error('Error handling manual task submit:', error.message);
-      // Handle error, e.g., show an error message to the user
     }
   };
 
@@ -148,7 +153,6 @@ const App = () => {
     const dateKey = value.format('YYYY-MM-DD');
     return manualEvents[dateKey] || [];
   };
-  
 
   const dateCellRender = (value) => {
     const listData = getListData(value, manualEvents);
@@ -179,19 +183,16 @@ const App = () => {
     <div className="calendar-container">
       <h2>Calendar</h2>
 
-      {/* Button to open the manual input modal */}
       <Button type="primary" onClick={showModal}>
         Add Manual Event
       </Button>
 
-      {/* Manual Input Modal */}
       <Modal
         title="Manual Event Input"
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        {/* Form for manual event input */}
         <Form form={form} onFinish={handleManualTaskSubmit} layout="vertical">
           <Form.Item label="Task" name="task" rules={[{ required: true }]}>
             <Input />
@@ -210,7 +211,6 @@ const App = () => {
         </Form>
       </Modal>
 
-      {/* Delete Confirmation Modal */}
       <Modal
         title="Delete Event"
         visible={deleteConfirmationVisible}
@@ -220,7 +220,6 @@ const App = () => {
         <p>Are you sure you want to delete this event?</p>
       </Modal>
 
-      {/* Ant Design Calendar component */}
       <Calendar cellRender={cellRender} />
     </div>
   );
