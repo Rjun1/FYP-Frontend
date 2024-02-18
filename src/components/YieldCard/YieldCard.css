@@ -10,7 +10,7 @@
     width: 40rem;
     box-shadow: 5px 5px 15px 0px #19302b28;
     /* margin-top: 10px; */
-    padding: 10px;
+    padding: 1rem;
 }
 
 .YieldTopBar{
@@ -26,14 +26,14 @@
     font-weight: bold;
 }
 
-button{
+.yield-button{
     margin-left: 5px;
     border: none;
     background: #f2fffb;
     box-shadow: inset 2px 2px 5px 0px #19302b33;
 }
 
-button:hover{
+.yield-button:hover{
     box-shadow: inset 2px 2px 5px 0px #19302b65;
     background: #FFCC7A;
     cursor: pointer;

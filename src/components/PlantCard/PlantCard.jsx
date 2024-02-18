@@ -26,7 +26,7 @@ import kaiLan from "../../imgs/kaiLan.jpg";
 
 const color = [{ color: '#559f89'}, { color: '#fff'}, { color: '#FFF'}]
 const backgroundColor = ['#FFF', '#ffc9b4', '#ff6d71']
-const boxShadow = ["0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b41"]
+// const boxShadow = ["0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b41"]
 const icon = [<UilHeart/>, <UilMedicalSquare/>, <UilHeartBreak/>]
 
 function PlantCard({card}) {

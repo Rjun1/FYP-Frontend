@@ -21,34 +21,36 @@ const rows = [
 
 export default function DenseTable() {
   return (
-    <TableContainer component={Paper} className='Table'>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead className='TableHead'>
-          <TableRow>
-            <TableCell sx={{fontSize:'18px'}}>Crop type</TableCell>
-            <TableCell sx={{fontSize:'18px'}} align="center">Batch No.</TableCell>
-            <TableCell sx={{fontSize:'18px'}} align="center">Date Planted</TableCell>
-            <TableCell sx={{fontSize:'18px'}} align="center">Harvest Date</TableCell>
-            <TableCell sx={{fontSize:'18px'}} align="center">Expected Yield (kg)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row" sx={{fontWeight:'bold'}}>
-                {row.name}
-              </TableCell>
-              <TableCell align="center">{row.batchNum}</TableCell>
-              <TableCell align="center">{row.datePlanted}</TableCell>
-              <TableCell align="center">{row.harvestDate}</TableCell>
-              <TableCell align="center">{row.expectedYield}</TableCell>
+    <div className='Table'>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <TableHead className='TableHead'>
+            <TableRow>
+              <TableCell sx={{fontSize:'18px'}}>Crop type</TableCell>
+              <TableCell sx={{fontSize:'18px'}} align="center">Batch No.</TableCell>
+              <TableCell sx={{fontSize:'18px'}} align="center">Date Planted</TableCell>
+              <TableCell sx={{fontSize:'18px'}} align="center">Harvest Date</TableCell>
+              <TableCell sx={{fontSize:'18px'}} align="center">Expected Yield (kg)</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row" sx={{fontWeight:'bold'}}>
+                  {row.name}
+                </TableCell>
+                <TableCell align="center">{row.batchNum}</TableCell>
+                <TableCell align="center">{row.datePlanted}</TableCell>
+                <TableCell align="center">{row.harvestDate}</TableCell>
+                <TableCell align="center">{row.expectedYield}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }

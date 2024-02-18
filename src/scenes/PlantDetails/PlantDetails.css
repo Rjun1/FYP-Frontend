@@ -1,36 +1,51 @@
 /* PlantDetails.css */
 
 .plant-details-container {
-  display: absolute;
-  flex-direction: column;
-  /* max-width: 2000px; */
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  height: 100vh;
-}
-
-.top-bar {
+    padding: 16px;
+  }
+  
+  .graph-placeholder {
+    height: 150px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+  }
+.flex-col {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 20px;
+  flex-direction: column;
+}
+  
+.PlantDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* justify-content: space-evenly; */
 }
 
-.nav-button {
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
+.batch-tab {
+  border-bottom: 1px solid #2133284d;
+}
+.batch-button {
+  margin-left: 5px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  background-color: transparent;
+  font-size: 20px;
 }
 
-.nav-button:hover {
-  background-color: #0056b3;
+.batch-button:hover {
+  cursor: pointer;
+  background-color: #83ceb7;
+  border-radius: 20px;
 }
 
-.plant-details-card {
-  margin-top: 20px;
+.batch-button.active {
+  background-color: #83ceb7;
+  box-shadow: inset 3px 3px 5px 0px #0e221e51;
+  /* border-radius: 10px; */
 }

@@ -4,19 +4,314 @@
       "id": "1",
       "title": "Bok Choy",
       "status": "Healthy",
-      "plantDate": "1 Jan 2024",
-      "series": [
+      "plantDate": "12 Feb 2024",
+      "lastWatered": "1 hour ago",
+      "historicalTemperature": [
         {
-          "name": "Bok Choy",
-          "data": [
-            31,
-            40,
-            28,
-            51,
-            42,
-            109,
-            100
-          ]
+          "timestamp": 1706662800000,
+          "predicted": 25.1,
+          "optimal": 25.0,
+          "actual": 25.1
+        },
+        {
+            "timestamp": 1706664600000,
+            "predicted": 25.0,
+            "optimal": 25.1,
+            "actual": 25.1
+        },
+        {
+            "timestamp": 1706666400000,
+            "predicted": 25.3,
+            "optimal": 25.2,
+            "actual": 25.2
+        },
+        {
+            "timestamp": 1706668200000,
+            "predicted": 25.3,
+            "optimal": 25.3,
+            "actual": 25.2
+        },
+        {
+            "timestamp": 1706670000000,
+            "predicted": 25.5,
+            "optimal": 25.4,
+            "actual": 25.4
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 25.5,
+            "optimal": 25.5,
+            "actual": 25.6
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 25.6,
+            "optimal": 25.5,
+            "actual": 25.6
+        }
+      ],
+      "historicalHumidity": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 51,
+          "optimal": 50,
+          "actual": 51
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 51
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 53,
+          "optimal": 50,
+          "actual": 52
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 53
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 55
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 54
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 53
+        }
+      ],
+      "historicalLight": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 401
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 403
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 410
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 405
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 400
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 397
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 399
+        }
+      ],
+      "historicalPH": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.8
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.6
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 6.6,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 6.5,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.5
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.6
+        }
+      ],
+      "historicalCo2": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 670,
+          "optimal": 660,
+          "actual": 667
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 668,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 666,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 664,
+          "optimal": 660,
+          "actual": 664
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 662,
+          "optimal": 660,
+          "actual": 663
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 660,
+          "optimal": 660,
+          "actual": 661
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 650,
+          "optimal": 660,
+          "actual": 660
+        }
+      ],
+      "historicalTds": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1289
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 1270,
+          "optimal": 1200,
+          "actual": 1278
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1250,
+          "optimal": 1200,
+          "actual": 1253
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1230,
+          "optimal": 1200,
+          "actual": 1229
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1210,
+          "optimal": 1200,
+          "actual": 1211
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 1190,
+          "optimal": 1200,
+          "actual": 1203
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1307
+        }
+      ],
+      "historicalEC": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1.9,
+          "optimal": 2.0,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1.9,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 1.8,
+            "optimal": 2.3,
+            "actual": 1.7
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 1.7,
+            "optimal": 2.3,
+            "actual": 1.5
         }
       ]
     },
@@ -24,19 +319,314 @@
       "id": "2",
       "title": "Choy Sum",
       "status": "Attention",
-      "plantDate": "2 Jan 2024",
-      "series": [
+      "plantDate": "13 Feb 2024",
+      "lastWatered": "2 hours ago",
+      "historicalTemperature": [
         {
-          "name": "Choy Sum",
-          "data": [
-            31,
-            40,
-            28,
-            51,
-            42,
-            109,
-            100
-          ]
+          "timestamp": 1706662800000,
+          "predicted": 25.1,
+          "optimal": 25.0,
+          "actual": 25.1
+        },
+        {
+            "timestamp": 1706664600000,
+            "predicted": 25.0,
+            "optimal": 25.1,
+            "actual": 25.1
+        },
+        {
+            "timestamp": 1706666400000,
+            "predicted": 25.3,
+            "optimal": 25.2,
+            "actual": 25.1
+        },
+        {
+            "timestamp": 1706668200000,
+            "predicted": 25.3,
+            "optimal": 25.3,
+            "actual": 25.1
+        },
+        {
+            "timestamp": 1706670000000,
+            "predicted": 25.5,
+            "optimal": 25.4,
+            "actual": 25.3
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 25.5,
+            "optimal": 25.5,
+            "actual": 25.4
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 25.6,
+            "optimal": 25.5,
+            "actual": 25.6
+        }
+      ],
+      "historicalHumidity": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 52
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 53
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 52
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 53,
+          "optimal": 50,
+          "actual": 52
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 53
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 53
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 53,
+          "optimal": 50,
+          "actual": 54
+        }
+      ],
+      "historicalLight": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 401
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 403
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 410
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 405
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 400
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 397
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 399
+        }
+      ],
+      "historicalPH": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.8
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.6
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 6.6,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 6.5,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.5
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.6
+        }
+      ],
+      "historicalCo2": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 670,
+          "optimal": 660,
+          "actual": 667
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 668,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 666,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 664,
+          "optimal": 660,
+          "actual": 664
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 662,
+          "optimal": 660,
+          "actual": 663
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 660,
+          "optimal": 660,
+          "actual": 661
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 650,
+          "optimal": 660,
+          "actual": 660
+        }
+      ],
+      "historicalTds": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1289
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 1270,
+          "optimal": 1200,
+          "actual": 1278
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1250,
+          "optimal": 1200,
+          "actual": 1253
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1230,
+          "optimal": 1200,
+          "actual": 1229
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1210,
+          "optimal": 1200,
+          "actual": 1211
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 1190,
+          "optimal": 1200,
+          "actual": 1203
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1307
+        }
+      ],
+      "historicalEC": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1.9,
+          "optimal": 2.0,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1.9,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 1.8,
+            "optimal": 2.3,
+            "actual": 1.7
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 1.7,
+            "optimal": 2.3,
+            "actual": 1.5
         }
       ]
     },
@@ -44,19 +634,314 @@
       "id": "3",
       "title": "Kai Lan",
       "status": "Critical",
-      "plantDate": "4 Jan 2024",
-      "series": [
+      "plantDate": "11 Feb 2024",
+      "lastWatered": "1 day ago",
+      "historicalTemperature": [
         {
-          "name": "Kai Lan",
-          "data": [
-            31,
-            40,
-            28,
-            51,
-            42,
-            109,
-            100
-          ]
+          "timestamp": 1706662800000,
+          "predicted": 25.1,
+          "optimal": 25.0,
+          "actual": 25.1
+        },
+        {
+            "timestamp": 1706664600000,
+            "predicted": 25.0,
+            "optimal": 25.1,
+            "actual": 25.1
+        },
+        {
+            "timestamp": 1706666400000,
+            "predicted": 25.3,
+            "optimal": 25.2,
+            "actual": 25.2
+        },
+        {
+            "timestamp": 1706668200000,
+            "predicted": 25.3,
+            "optimal": 25.3,
+            "actual": 25.2
+        },
+        {
+            "timestamp": 1706670000000,
+            "predicted": 25.5,
+            "optimal": 25.4,
+            "actual": 25.2
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 25.5,
+            "optimal": 25.5,
+            "actual": 25.3
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 25.6,
+            "optimal": 25.5,
+            "actual": 25.3
+        }
+      ],
+      "historicalHumidity": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 51,
+          "optimal": 50,
+          "actual": 51
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 51
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 53,
+          "optimal": 50,
+          "actual": 52
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 53
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 55
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 54,
+          "optimal": 50,
+          "actual": 54
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 52,
+          "optimal": 50,
+          "actual": 53
+        }
+      ],
+      "historicalLight": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 401
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 403
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 410
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 405
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 400
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 397
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 400,
+          "optimal": 400,
+          "actual": 399
+        }
+      ],
+      "historicalPH": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.8
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 6.8,
+          "optimal": 6.5,
+          "actual": 6.6
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 6.6,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 6.5,
+          "optimal": 6.5,
+          "actual": 6.7
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.5
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 6.4,
+          "optimal": 6.5,
+          "actual": 6.6
+        }
+      ],
+      "historicalCo2": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 670,
+          "optimal": 660,
+          "actual": 667
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 668,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 666,
+          "optimal": 660,
+          "actual": 665
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 664,
+          "optimal": 660,
+          "actual": 664
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 662,
+          "optimal": 660,
+          "actual": 663
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 660,
+          "optimal": 660,
+          "actual": 661
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 650,
+          "optimal": 660,
+          "actual": 660
+        }
+      ],
+      "historicalTds": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1301
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 1270,
+          "optimal": 1200,
+          "actual": 1288
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1250,
+          "optimal": 1200,
+          "actual": 1230
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1230,
+          "optimal": 1200,
+          "actual": 1200
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1210,
+          "optimal": 1200,
+          "actual": 1200
+        },
+        {
+          "timestamp": 1706671800000,
+          "predicted": 1190,
+          "optimal": 1200,
+          "actual": 1100
+        },
+        {
+          "timestamp": 1706679000000,
+          "predicted": 1300,
+          "optimal": 1200,
+          "actual": 1100
+        }
+      ],
+      "historicalEC": [
+        {
+          "timestamp": 1706662800000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706664600000,
+          "predicted": 2.0,
+          "optimal": 1.7,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706666400000,
+          "predicted": 1.9,
+          "optimal": 2.0,
+          "actual": 2.0
+        },
+        {
+          "timestamp": 1706668200000,
+          "predicted": 1.9,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+          "timestamp": 1706670000000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.9
+        },
+        {
+            "timestamp": 1706671800000,
+            "predicted": 1.8,
+            "optimal": 2.3,
+            "actual": 1.7
+        },
+        {
+            "timestamp": 1706679000000,
+            "predicted": 1.7,
+            "optimal": 2.3,
+            "actual": 1.5
         }
       ]
     }
@@ -68,114 +953,39 @@
       "content": "23 Jan 10:30 AM: test"
     },
     {
-      "id": "1706234862612",
+      "id": "1706188666217",
       "type": "manual",
-      "content": "26 Jan 10:00 AM: Test1"
+      "content": "25 Jan 09:15 PM: fsdfs"
     },
     {
-      "id": "1706234874517",
+      "id": "1706188676168",
       "type": "manual",
-      "content": "26 Jan 10:00 AM: Test2"
+      "content": "25 Jan 09:15 PM: agerahr"
     },
     {
-      "id": "1706234885896",
+      "id": "1706188690029",
       "type": "manual",
-      "content": "26 Jan 10:00 AM: test123"
+      "content": "26 Jan 09:15 PM: aaaaa"
     },
     {
-      "id": "1706234985388",
+      "id": "1706188697170",
       "type": "manual",
-      "content": "26 Jan 10:00 AM: Test4"
+      "content": "27 Jan 09:15 PM: hhhhhhhh"
     },
     {
-      "id": "1706234999857",
+      "id": "1706188709496",
       "type": "manual",
-      "content": "26 Jan 10:00 AM: Test 5"
+      "content": "27 Jan 09:15 PM: reha"
     },
     {
-      "id": "1706236712258",
+      "id": "1706416385335",
       "type": "manual",
-      "content": "26 Jan 10:30 AM: test"
+      "content": "28 Jan 12:30 PM: afewfwg"
     },
     {
-      "id": "1706415625091",
+      "id": "1706416666460",
       "type": "manual",
-      "content": "28 Jan 12:15 PM: 123"
-    },
-    {
-      "id": "1706416043126",
-      "type": "manual",
-      "content": "28 Jan 12:15 PM: 123"
-    },
-    {
-      "id": "1706416076141",
-      "type": "manual",
-      "content": "28 Jan 12:15 PM: 123"
-    },
-    {
-      "id": "1706416124546",
-      "type": "manual",
-      "content": "28 Jan 12:15 PM: 123"
-    },
-    {
-      "id": "1706416231997",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: 123"
-    },
-    {
-      "id": "1706416257788",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: 123"
-    },
-    {
-      "id": "1706416514300",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: 123"
-    },
-    {
-      "id": "1706416600931",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: 123"
-    },
-    {
-      "id": "1706416693144",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: test123"
-    },
-    {
-      "id": "1706416711917",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: asd"
-    },
-    {
-      "id": "1706417210670",
-      "type": "manual",
-      "content": "28 Jan 12:45 PM: 123"
-    },
-    {
-      "id": "1706417342041",
-      "type": "manual",
-      "content": "28 Jan 12:45 PM: test123"
-    },
-    {
-      "id": "1706417358377",
-      "type": "manual",
-      "content": "28 Jan 12:45 PM: test"
-    },
-    {
-      "id": "1706417450481",
-      "type": "manual",
-      "content": "28 Jan 12:45 PM: 123"
-    },
-    {
-      "id": "1706448823305",
-      "type": "manual",
-      "content": "29 Jan 09:30 PM: 123"
-    },
-    {
-      "id": "1707740289815",
-      "type": "manual",
-      "content": "13 Feb 08:15 PM: 123"
+      "content": "28 Jan 12:30 PM: agerahr"
     }
   ],
   "inventoryItems": [
@@ -186,94 +996,16 @@
       "location": "123"
     },
     {
-      "id": "55e8",
-      "item": "Plant Seed 1",
-      "quantity": "100",
-      "location": "Shelf A"
+      "id": "8fe0",
+      "item": "item",
+      "quantity": "12",
+      "location": "REW"
     },
     {
-      "id": "f596",
-      "item": "Plant Seed 2",
-      "quantity": "200",
-      "location": "Shelf B"
-    },
-    {
-      "id": "9725",
-      "item": "Plant Seed 3",
-      "quantity": "300",
-      "location": "Shelf C"
-    },
-    {
-      "id": "fd33",
-      "item": "Plant Seed 4",
-      "quantity": "400",
-      "location": "Shelf D"
-    },
-    {
-      "id": "3262",
-      "item": "Mizuna Seed",
-      "quantity": "500",
-      "location": "Company Store Room"
-    },
-    {
-      "id": "14a7",
-      "item": "test",
-      "quantity": "9",
-      "location": "1"
-    },
-    {
-      "id": "ce43",
-      "item": "seed A",
-      "quantity": "11",
-      "location": "cvb"
-    },
-    {
-      "id": "42be",
-      "item": "Seed B",
-      "quantity": "0",
-      "location": "shelf Z"
-    },
-    {
-      "id": "b245",
-      "item": "seed a",
-      "quantity": "123",
-      "location": "123"
-    },
-    {
-      "id": "3c6d",
-      "item": "seed b",
-      "quantity": "123",
-      "location": "123"
-    },
-    {
-      "id": "3c23",
-      "item": "",
-      "quantity": "",
-      "location": ""
-    },
-    {
-      "id": "c927",
-      "item": "",
-      "quantity": "",
-      "location": ""
-    },
-    {
-      "id": "6811",
-      "item": "",
-      "quantity": "",
-      "location": ""
-    },
-    {
-      "id": "7102",
-      "item": "",
-      "quantity": "",
-      "location": ""
-    },
-    {
-      "id": "fa75",
-      "item": "",
-      "quantity": "",
-      "location": ""
+      "id": "bc7c",
+      "item": "Rr",
+      "quantity": "2",
+      "location": "fa"
     }
   ]
 }
