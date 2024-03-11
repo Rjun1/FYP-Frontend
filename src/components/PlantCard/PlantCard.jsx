@@ -1,73 +1,76 @@
 import React, {useState} from 'react'
 import {motion, AnimateSharedLayout} from 'framer-motion'
-import {CircularProgressbar} from 'react-circular-progressbar'
-import Chart from "react-apexcharts";
 import 'react-circular-progressbar/dist/styles.css';
 import './PlantCard.css'
 
 import {
   UilTimes,
-  UilEstate,
-  UilClipboardAlt,
-  UilUsersAlt,
-  UilPackage,
-  UilChart,
-  UilSignOutAlt,
-  UilUsdSquare,
-  UilHeart,
-  UilHeartMedical,
-  UilMedicalSquare,
-  UilMedkit,
-  UilHeartBreak,
 } from "@iconscout/react-unicons";
-import bokChoy from "../../imgs/bokChoy.png";
-import choySum from "../../imgs/choySum.jpeg";
-import kaiLan from "../../imgs/kaiLan.jpg";
 
-const color = [{ color: '#559f89'}, { color: '#fff'}, { color: '#FFF'}]
-const backgroundColor = ['#FFF', '#ffc9b4', '#ff6d71']
-// const boxShadow = ["0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b41"]
-const icon = [<UilHeart/>, <UilMedicalSquare/>, <UilHeartBreak/>]
+// Import helper functions
+import { formatDate, getPic, getStyle } from '../../helperFunctions/utils';
 
-function PlantCard({card}) {
+function PlantCard({batchInfo}) {
 
     const [expanded, setExpanded] = useState(false)
     
     return (
         <AnimateSharedLayout>
             {
-              expanded?
-                <ExpandedCard param={card} setExpanded={() => setExpanded(false)} /> :
-                <CompactCard param = {card} setExpanded={()=>setExpanded(true)}/>
+              batchInfo.status == "Healthy" ? 
+              (<UnexpandableCompactCard param={batchInfo}/>) :
+              (expanded?
+                <ExpandedCard param={batchInfo} setExpanded={() => setExpanded(false)} /> :
+                <ExpandableCompactCard param = {batchInfo} setExpanded={()=>setExpanded(true)}/>)
             }
         </AnimateSharedLayout>
         
     )
 }
 
-
+// Unexpandable Compact Card
+function UnexpandableCompactCard({param}){
+  return (
+      <div className="CompactCard Unexpandable"
+      style={{
+        backgroundColor: getStyle(param.status).backgroundColor,
+      }}
+      >
+        <div className="plant-container">
+          <img src={getPic(param.PlantName)} alt="Plant Image" className="circular-image"/>
+        </div>
+        <div className="detail">
+          <span>{param.PlantName}</span>
+          <div className='status-container' style={ getStyle(param.status).color }>
+            {getStyle(param.status).icon}
+            <span >{param.status}</span>
+          </div>
+          <span>Date planted: {formatDate(param.DatePlanted)}</span>
+        </div>
+    </div>
+  )
+}
 
 // Compact Card
-function CompactCard({param, setExpanded}){
+function ExpandableCompactCard({param, setExpanded}){
     return (
-        <motion.div className="CompactCard"
+        <motion.div className="CompactCard Expandable"
         style={{
-          backgroundColor: backgroundColor[getStatusIndex(param.status)],
-          // boxShadow: boxShadow[getStatusIndex(param.status)]
+          backgroundColor: getStyle(param.status).backgroundColor,
         }}
         onClick={setExpanded}
         layoutId='expandableCard'
         >
           <div className="plant-container">
-            <img src={getPic(param.title)} alt="Plant Image" className="circular-image"/>
+            <img src={getPic(param.PlantName)} alt="Plant Image" className="circular-image"/>
           </div>
           <div className="detail">
-            <span>{param.title}</span>
-            <div className='status-container' style={ color[getStatusIndex(param.status)]}>
-              {icon[getStatusIndex(param.status)]}
+            <span>{param.PlantName}</span>
+            <div className='status-container' style={ getStyle(param.status).color }>
+              {getStyle(param.status).icon}
               <span >{param.status}</span>
             </div>
-            <span>Date planted: {param.plantDate}</span>
+            <span>Date planted: {formatDate(param.DatePlanted)}</span>
           </div>
       </motion.div>
     )
@@ -85,36 +88,10 @@ function ExpandedCard({ param, setExpanded }) {
             <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "#002212" }}>
                 <UilTimes onClick={setExpanded} />
             </div>
-            <span>{param.title}</span>
+            <span>{param.PlantName}</span>
         </motion.div>
         
     )
-}
-
-function getStatusIndex(status) {
-  switch (status) {
-    case 'Healthy':
-      return 0;
-    case 'Attention':
-      return 1;
-    case 'Critical':
-      return 2;
-    default:
-      return {};
-  }
-}
-
-function getPic(title) {
-  switch (title) {
-    case 'Bok Choy':
-      return bokChoy;
-    case 'Choy Sum':
-      return choySum;
-    case 'Kai Lan':
-      return kaiLan;
-    default:
-      return {};
-  }
 }
 
 export default PlantCard

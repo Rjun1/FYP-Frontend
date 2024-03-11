@@ -2,70 +2,86 @@
     background: linear-gradient(to bottom right, #f88084, #f8bdbf);
     box-shadow: 5px 5px 15px 0px #46666028;
     height: 200px;
+    width: 100%;
     border-radius: 0.7rem;
     padding: 1rem 3rem 1rem 3rem;
     display: grid;
-    grid-template-columns: 25rem auto auto;
+    grid-template-columns: 25rem auto 15rem;
     gap: 35px;
   }
-  
-  .details-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .details-column>div:nth-child(1) {
-    display: flex;
-    justify-content: space-between;  
-  }
-  .title {
-    font-size: 40px;
-    font-weight: bold;
-  }
-  .status-container{
-    font-size: 20px;
-    display: flex;
-  }
-  .status-container>span{
-    margin-left: 5px;
-  }
-  .circular-image{
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-  }
-  
-  .info {
-    font-size: 15px;
-  }
-  .info>span>span {
-    font-size: 20px;
-    margin-right: 5px;
-  }
-  
-  .countdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .countdown>span:nth-child(1) {
-    font-size: 20px;
-  }
-  .countdown>span:nth-child(2) {
-    font-size: 40px;
-  }
-  
-  .timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .timeline-clock-icon {
-    font-size: 16px;
-  }
-  
-  .ant-timeline-item-content {
-    height: 20px;
-    padding-bottom: 5px;
-    min-height: fit-content!important;
-  }
+
+/* Left-most column: Plant basic info display */
+.details-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.details-column>div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;  
+}
+.title {
+  font-size: 40px;
+  font-weight: bold;
+}
+.status-container{
+  font-size: 20px;
+  display: flex;
+}
+.status-container>span{
+  margin-left: 5px;
+}
+.circular-image{
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.info {
+  font-size: 15px;
+}
+.info>span>span {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* Middle column: Plant's harvest countdown */
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.countdown>span:nth-child(1) {
+  font-size: 20px;
+}
+.countdown>span:nth-child(2) {
+  font-size: 40px;
+}
+
+/* Right-most column */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-clock-icon {
+  font-size: 16px;
+}
+
+.ant-timeline-item-content {
+  height: 20px;
+  padding-bottom: 5px;
+  min-height: fit-content!important;
+}
+
+.buttons-column {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10% 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}

@@ -2,35 +2,35 @@ import React, { useState, useEffect } from 'react'
 import "./DetailsCards.css"
 import DetailsCard from '../DetailsCard/DetailsCard'
 
-const historicalDataTitles = ["historicalTemperature", "historicalHumidity", "historicalLight", "historicalPH", "historicalCo2", "historicalTds", "historicalEC"]
-const cardTitles = ["Temperature", "Humidity", "Light Intensity", "PH", "Co2", "Tds", "EC"]
+const dataUnits = {
+  "Temperature": "(°C)", 
+  "Humidity": "(%)", 
+  "Brightness": "(μmol/m²/s)", 
+  "pH": "", 
+  "CO2": "(ppm)", 
+  "TDS": "(ppm)", 
+  "EC": "(mS/cm²)"}
 
-const dataUnits = ["(°C)", "(%)", "(μmol/m²/s)", "", "(ppm)", "(ppm)", "(mS/cm²)"]
+function DetailsCards({sensorData}) {
 
-function DetailsCards({details}) {
-
-
-  ////////////////////
-  // Fetch data from local json file
-  const [plantDetails, setPlantDetails] = useState([])
+  const sensors = ["Temperature", "Humidity", "Brightness", "pH", "CO2", "TDS", "EC"]
   
-  const fetchData = () => {
-    fetch('http://localhost:4001/result')
-        .then(res => res.json())
-        .then(data => {setPlantDetails(data);})
-        .catch(e => console.log(e.message));
-  }
-
-  useEffect(() => {
-      fetchData();
-  }, []);
-  ////////////////////
-
+  console.log("sensorData [detailsCard]:", sensorData)
+  
   return (
     <div className='DetailsCards'>
-        {historicalDataTitles.map((dataTitle, index) => (
-        <DetailsCard key={dataTitle} title={cardTitles[index]} unit={dataUnits[index]} dataset={details[dataTitle]} backend={plantDetails}/>
-        ))}
+        {sensorData != {} && Object.keys(sensorData).length > 0 && sensors.map(sensorName => (
+        <DetailsCard
+          key={sensorName}
+          title={sensorName}
+          unit={dataUnits[sensorName]}
+          min={sensorData[sensorName + "_min"]}
+          max={sensorData[sensorName + "_max"]}
+          actual={sensorData[sensorName]}
+          optimal={sensorData[sensorName + "_optimal"]}
+          datetime={sensorData.Datetime}
+        />
+        ))} 
     </div>
     
   )

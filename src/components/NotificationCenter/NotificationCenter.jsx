@@ -13,7 +13,7 @@ const NotificationCenter = () => {
       }
 
       const tasksData = await response.json();
-      console.log('Fetched tasks successfully:', tasksData);
+      // console.log('Fetched tasks successfully:', tasksData);
       setTasks(tasksData);
     } catch (error) {
       console.error('Error fetching tasks:', error.message);

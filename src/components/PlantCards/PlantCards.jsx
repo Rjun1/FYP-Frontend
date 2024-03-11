@@ -2,25 +2,37 @@ import React, { useState, useEffect } from 'react'
 import PlantCard from '../PlantCard/PlantCard'
 import './PlantCards.css'
 
-const Cards = () => {
-    const [cards, setCards] = useState([])
+// Import MUI components
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
-    const fetchData = () => {
-        fetch('http://localhost:4000/PlantData')
-            .then(res => res.json())
-            .then(data => {setCards(data);})
-            .catch(e => console.log(e.message));
-    }
+const ColorButton = styled(Button)(() => ({
+  color: '#3e8873',
+  backgroundColor: '#BDC9C6',
+  '&:hover': {
+    color: '#f2fffb',
+    backgroundColor: '#3e8873',
+  },
+  width: '100%',
+  height: '100%',
+  fontSize: '30px',
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+  fontFamily: 'Poppins',
+}));
+
+const Cards = ({latestActiveSensorData, activeBatchInfo}) => {
 
     return (
         <div className = "Cards">
             {
-                cards && cards.length > 0 &&
-                cards.map(card => <PlantCard key={card._id} card={card} />)
+                activeBatchInfo && activeBatchInfo.length > 0 &&
+                activeBatchInfo.map(batchInfo => <PlantCard key={batchInfo._id} batchInfo={batchInfo} />)
+            }
+            { /* Show grow button when less than 3 plant types*/
+                activeBatchInfo && activeBatchInfo.length < 3 &&
+                (<div className='GrowCard'>
+                    <ColorButton variant="contained">Grow</ColorButton>
+                </div>)
             }
         </div>
     )

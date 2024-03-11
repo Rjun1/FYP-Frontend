@@ -1,0 +1,313 @@
+{
+    "success": 1,
+    "result": {
+      "Mizuna": {
+        "Datetime": [
+          "2024-02-27T02:08:11.000Z"
+        ],
+        "MicrocontrollerID": [
+          "ABCDE"
+        ],
+        "PlantBatchId": [
+          1
+        ],
+        "PlantName": [
+          "Mizuna"
+        ],
+        "Temperature": [
+          30.31
+        ],
+        "Humidity": [
+          68
+        ],
+        "Brightness": [
+          33
+        ],
+        "pH": [
+          8.16
+        ],
+        "CO2": [
+          640
+        ],
+        "EC": [
+          1.7
+        ],
+        "TDS": [
+          1300
+        ],
+        "PlantId": [
+          2
+        ],
+        "Temperature_min": [
+          24
+        ],
+        "Temperature_max": [
+          28
+        ],
+        "Temperature_optimal": [
+          25
+        ],
+        "Humidity_min": [
+          50
+        ],
+        "Humidity_max": [
+          70
+        ],
+        "Humidity_optimal": [
+          60
+        ],
+        "Brightness_min": [
+          300
+        ],
+        "Brightness_max": [
+          800
+        ],
+        "Brightness_optimal": [
+          500
+        ],
+        "pH_min": [
+          6.7
+        ],
+        "pH_max": [
+          8.5
+        ],
+        "pH_optimal": [
+          7.5
+        ],
+        "CO2_min": [
+          600
+        ],
+        "CO2_max": [
+          750
+        ],
+        "CO2_optimal": [
+          700
+        ],
+        "EC_min": [
+          1
+        ],
+        "EC_max": [
+          2
+        ],
+        "EC_optimal": [
+          1.5
+        ],
+        "TDS_min": [
+          1100
+        ],
+        "TDS_max": [
+          1400
+        ],
+        "TDS_optimal": [
+          1275
+        ],
+        "status": "healthy"
+      },
+      "Choy Sum": {
+        "Datetime": [
+          "2024-02-27T02:08:11.000Z"
+        ],
+        "MicrocontrollerID": [
+          "EFGXY"
+        ],
+        "PlantBatchId": [
+          2
+        ],
+        "PlantName": [
+          "Choy Sum"
+        ],
+        "Temperature": [
+          30.31
+        ],
+        "Humidity": [
+          68
+        ],
+        "Brightness": [
+          33
+        ],
+        "pH": [
+          8.16
+        ],
+        "CO2": [
+          640
+        ],
+        "EC": [
+          1.7
+        ],
+        "TDS": [
+          1300
+        ],
+        "PlantId": [
+          2
+        ],
+        "Temperature_min": [
+          24
+        ],
+        "Temperature_max": [
+          28
+        ],
+        "Temperature_optimal": [
+          25
+        ],
+        "Humidity_min": [
+          50
+        ],
+        "Humidity_max": [
+          70
+        ],
+        "Humidity_optimal": [
+          60
+        ],
+        "Brightness_min": [
+          300
+        ],
+        "Brightness_max": [
+          800
+        ],
+        "Brightness_optimal": [
+          500
+        ],
+        "pH_min": [
+          6.7
+        ],
+        "pH_max": [
+          8.5
+        ],
+        "pH_optimal": [
+          7.5
+        ],
+        "CO2_min": [
+          600
+        ],
+        "CO2_max": [
+          750
+        ],
+        "CO2_optimal": [
+          700
+        ],
+        "EC_min": [
+          1
+        ],
+        "EC_max": [
+          2
+        ],
+        "EC_optimal": [
+          1.5
+        ],
+        "TDS_min": [
+          1100
+        ],
+        "TDS_max": [
+          1400
+        ],
+        "TDS_optimal": [
+          1275
+        ],
+        "status": "healthy"
+      },
+      "Basil": {
+        "Datetime": [
+          "2024-02-27T02:08:11.000Z"
+        ],
+        "MicrocontrollerID": [
+          "XYZWN"
+        ],
+        "PlantBatchId": [
+          3
+        ],
+        "PlantName": [
+          "Basil"
+        ],
+        "Temperature": [
+          30.31
+        ],
+        "Humidity": [
+          68
+        ],
+        "Brightness": [
+          33
+        ],
+        "pH": [
+          8.16
+        ],
+        "CO2": [
+          640
+        ],
+        "EC": [
+          1.7
+        ],
+        "TDS": [
+          1300
+        ],
+        "PlantId": [
+          2
+        ],
+        "Temperature_min": [
+          24
+        ],
+        "Temperature_max": [
+          28
+        ],
+        "Temperature_optimal": [
+          25
+        ],
+        "Humidity_min": [
+          50
+        ],
+        "Humidity_max": [
+          70
+        ],
+        "Humidity_optimal": [
+          60
+        ],
+        "Brightness_min": [
+          300
+        ],
+        "Brightness_max": [
+          800
+        ],
+        "Brightness_optimal": [
+          500
+        ],
+        "pH_min": [
+          6.7
+        ],
+        "pH_max": [
+          8.5
+        ],
+        "pH_optimal": [
+          7.5
+        ],
+        "CO2_min": [
+          600
+        ],
+        "CO2_max": [
+          750
+        ],
+        "CO2_optimal": [
+          700
+        ],
+        "EC_min": [
+          1
+        ],
+        "EC_max": [
+          2
+        ],
+        "EC_optimal": [
+          1.5
+        ],
+        "TDS_min": [
+          1100
+        ],
+        "TDS_max": [
+          1400
+        ],
+        "TDS_optimal": [
+          1275
+        ],
+        "status": "healthy"
+      }
+    }
+  }
+
+  

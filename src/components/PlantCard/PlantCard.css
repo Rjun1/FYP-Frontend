@@ -5,14 +5,14 @@
     border-radius: 0.7rem;
     color: #002212;
     position: relative;
-    cursor: pointer;
     padding: 1rem;
     background: #FFF;
     box-shadow: 5px 5px 15px 0px #19302b28;
 }
 
-.CompactCard:hover{
+.CompactCard.Expandable:hover{
     box-shadow: 0px 5px 5px 0px #19302b3d;
+    cursor: pointer;
 }
 
 /*DETAILS IN CARD*/

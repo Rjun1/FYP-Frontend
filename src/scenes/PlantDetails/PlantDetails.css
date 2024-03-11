@@ -1,21 +1,21 @@
 /* PlantDetails.css */
 
 .plant-details-container {
-    padding: 16px;
-  }
+  padding: 16px;
+}
   
-  .graph-placeholder {
-    height: 150px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-  }
+.graph-placeholder {
+  height: 150px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -25,11 +25,13 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* justify-content: space-evenly; */
 }
 
 .batch-tab {
   border-bottom: 1px solid #2133284d;
+}
+.batch-tab>div {
+  font-size: 20px;
 }
 .batch-button {
   margin-left: 5px;

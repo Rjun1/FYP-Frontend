@@ -50,7 +50,7 @@ const Sidebar = () => {
         {/* logo */}
         <div className="logo">
           <img src={SGplant} alt="" />
-          <span>Smart Greens</span>
+          <span>Greens.AI</span>
         </div>
 
         {/* MENU */}

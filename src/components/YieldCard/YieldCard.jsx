@@ -123,23 +123,23 @@ const YieldCard = () => {
 }
 
 const data1 = [{
-  name: 'Bok Choy',
-  data: [
-    {x:'Jan', y: 44}, 
-    {x:'Feb', y: 11}, 
-    {x:'Mar', y: 33}, 
-    {x:'Apr', y: 12}, 
-    {x:'Jun', y: 34}, 
-    {x:'Jul', y: 21},
-    {x:'Aug', y: 15},
-    {x:'Sep', y: 30},
-    {x:'Oct', y: 23},
-    {x:'Nov', y: 26},
-    {x:'Dec', y: 44},
-  ]}, {
   name: 'Choy Sum',
   data: [
-    {x:'Jan', y: 44}, 
+    {x:'Jan', y: 23}, 
+    {x:'Feb', y: 11}, 
+    {x:'Mar', y: 15}, 
+    {x:'Apr', y: 12}, 
+    {x:'Jun', y: 25}, 
+    {x:'Jul', y: 14},
+    {x:'Aug', y: 17},
+    {x:'Sep', y: 25},
+    {x:'Oct', y: 23},
+    {x:'Nov', y: 26},
+    {x:'Dec', y: 5},
+  ]}, {
+  name: 'Mizuna',
+  data: [
+    {x:'Jan', y: 25}, 
     {x:'Feb', y: 11}, 
     {x:'Mar', y: 33}, 
     {x:'Apr', y: 12}, 
@@ -149,12 +149,12 @@ const data1 = [{
     {x:'Sep', y: 30},
     {x:'Oct', y: 23},
     {x:'Nov', y: 26},
-    {x:'Dec', y: 44},
+    {x:'Dec', y: 30},
   ]}, {
-  name: 'Kai Lan',
+  name: 'Basil',
   data: [
     {x:'Jan', y: 44}, 
-    {x:'Feb', y: 11}, 
+    {x:'Feb', y: 22}, 
     {x:'Mar', y: 33}, 
     {x:'Apr', y: 12}, 
     {x:'Jun', y: 34}, 
