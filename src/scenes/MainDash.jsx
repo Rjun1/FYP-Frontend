@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './MainDash.css'
 import PlantCards from '../components/PlantCards/PlantCards'
 import Table from '../components/Table/Table'
@@ -8,9 +9,15 @@ import StatsCard from '../components/StatsCard/StatsCard'
 
 import { formatDate } from '../helperFunctions/utils'
 
+import { formatDate } from '../helperFunctions/utils'
+
 // Import animation
 import energyAnimation from "../assets/animation/energy-animation.json"
 import carbonAnimation from "../assets/animation/carbon-animation.json"
+
+function createData(name, batchNum, datePlanted, harvestDate, expectedYield) {
+    return { name, batchNum, datePlanted, harvestDate, expectedYield };
+  }  
 
 function createData(name, batchNum, datePlanted, harvestDate, expectedYield) {
     return { name, batchNum, datePlanted, harvestDate, expectedYield };
