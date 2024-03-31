@@ -74,7 +74,6 @@ function ExpandableCompactCard({param, setExpanded}){
               <span>{param.status && (param.status.charAt(0).toUpperCase() + param.status.slice(1))}</span>
             </div>
             <span>Date planted: {formatDate(param.DatePlanted)}</span>
-            <span>Date planted: {formatDate(param.DatePlanted)}</span>
           </div>
       </motion.div>
     )

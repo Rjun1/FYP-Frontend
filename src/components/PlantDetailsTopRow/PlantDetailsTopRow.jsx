@@ -287,7 +287,7 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
     const dateHarvested = formatInputDateTime(selectedDate, selectedTime);
 
     const plantBatchId = activePlantBatchId[activePlantNames.indexOf(plantName)];
-    const weightHarvested = parseInt(weightHarvestedStr, 10)
+    const weightHarvested = parseFloat(weightHarvestedStr, 10)
 
     const harvestData = {
       plantBatchId,
@@ -393,14 +393,11 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
     <div className='PlantDetailsTopRow' 
       style={{
         background: getTopRowStyle(details.status).backgroundColor,
-        background: getTopRowStyle(details.status).backgroundColor,
       }}>
       <div className='details-column'>
         <div>
           <span className='flex-col'> 
-          <span className='flex-col'> 
             <div className='title'>
-              {details.PlantName}
               {details.PlantName}
             </div>
             <div className='status-container' style={getTopRowStyle(details.status).color}>
@@ -410,7 +407,6 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
           </span>
           <div>
             <img src={getPic(details.PlantName)} alt="Plant Image" className="circular-image"/>
-            <img src={getPic(details.PlantName)} alt="Plant Image" className="circular-image"/>
           </div>
         </div>
         <div className='info flex-col'>
@@ -418,7 +414,6 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
         </div>
       </div>
 
-      <CountdownComponent plantDate={details.DatePlanted} expectedHarvestDate={details.ExpectedHarvestDate}/>
       <CountdownComponent plantDate={details.DatePlanted} expectedHarvestDate={details.ExpectedHarvestDate}/>
 
       <div className='buttons-column'>

@@ -10,14 +10,6 @@ const dataUnits = {
   "CO2": "(ppm)", 
   "TDS": "(ppm)", 
   "EC": "(mS/cm²)"}
-const dataUnits = {
-  "Temperature": "(°C)", 
-  "Humidity": "(%)", 
-  "Brightness": "(μmol/m²/s)", 
-  "pH": "", 
-  "CO2": "(ppm)", 
-  "TDS": "(ppm)", 
-  "EC": "(mS/cm²)"}
 
 function DetailsCards({sensorData}) {
 
