@@ -1,120 +1,126 @@
 import React, {useState} from 'react'
 import {motion, AnimateSharedLayout} from 'framer-motion'
-import {CircularProgressbar} from 'react-circular-progressbar'
-import Chart from "react-apexcharts";
-import 'react-circular-progressbar/dist/styles.css';
+import LinearProgress from '@mui/material/LinearProgress';
+
+// import 'react-circular-progressbar/dist/styles.css';
 import './PlantCard.css'
 
 import {
   UilTimes,
-  UilEstate,
-  UilClipboardAlt,
-  UilUsersAlt,
-  UilPackage,
-  UilChart,
-  UilSignOutAlt,
-  UilUsdSquare,
-  UilHeart,
-  UilHeartMedical,
-  UilMedicalSquare,
-  UilMedkit,
-  UilHeartBreak,
 } from "@iconscout/react-unicons";
-import bokChoy from "../../imgs/bokChoy.png";
-import choySum from "../../imgs/choySum.jpeg";
-import kaiLan from "../../imgs/kaiLan.jpg";
 
-const color = [{ color: '#559f89'}, { color: '#fff'}, { color: '#FFF'}]
-const backgroundColor = ['#FFF', '#ffc9b4', '#ff6d71']
-// const boxShadow = ["0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b28", "0px 5px 15px 0px #19302b41"]
-const icon = [<UilHeart/>, <UilMedicalSquare/>, <UilHeartBreak/>]
+// Import helper functions
+import { dataUnits, formatDate, formatDateAndTime, getPic, getStyle, sensors } from '../../helperFunctions/utils';
+import SensorCard from '../SensorCard/SensorCard';
 
-function PlantCard({card}) {
+function PlantCard({batchInfo, latestSensorData}) {
 
     const [expanded, setExpanded] = useState(false)
     
     return (
         <AnimateSharedLayout>
             {
-              expanded?
-                <ExpandedCard param={card} setExpanded={() => setExpanded(false)} /> :
-                <CompactCard param = {card} setExpanded={()=>setExpanded(true)}/>
+              (batchInfo && Object.keys(batchInfo).length > 0 && (batchInfo.status.toLowerCase() === "healthy" || batchInfo.status.toLowerCase() === "unknown")) ? 
+              (<UnexpandableCompactCard param={batchInfo}/>) :
+              (expanded?
+                <ExpandedCard param={batchInfo} setExpanded={() => setExpanded(false)} latestSensorData={latestSensorData}/> :
+                <ExpandableCompactCard param = {batchInfo} setExpanded={()=>setExpanded(true)}/>)
             }
         </AnimateSharedLayout>
         
     )
 }
 
-
+// Unexpandable Compact Card
+function UnexpandableCompactCard({param}){
+  return (
+      <div className="CompactCard Unexpandable"
+      style={{
+        backgroundColor: getStyle(param.status).backgroundColor,
+      }}
+      >
+        <div className="plant-container">
+          <img src={getPic(param.PlantName)} alt="Plant Image" className="circular-image"/>
+        </div>
+        <div className="detail">
+          <span>{param.PlantName}</span>
+          <div className='status-container' style={ getStyle(param.status).color }>
+            {getStyle(param.status).icon}
+            <span>{param.status && (param.status.charAt(0).toUpperCase() + param.status.slice(1))}</span>
+          </div>
+          <span>Date planted: {formatDate(param.DatePlanted)}</span>
+        </div>
+    </div>
+  )
+}
 
 // Compact Card
-function CompactCard({param, setExpanded}){
+function ExpandableCompactCard({param, setExpanded}){
     return (
-        <motion.div className="CompactCard"
+        <motion.div className="CompactCard Expandable"
         style={{
-          backgroundColor: backgroundColor[getStatusIndex(param.status)],
-          // boxShadow: boxShadow[getStatusIndex(param.status)]
+          backgroundColor: getStyle(param.status).backgroundColor,
         }}
         onClick={setExpanded}
         layoutId='expandableCard'
         >
           <div className="plant-container">
-            <img src={getPic(param.title)} alt="Plant Image" className="circular-image"/>
+            <img src={getPic(param.PlantName)} alt="Plant Image" className="circular-image"/>
           </div>
           <div className="detail">
-            <span>{param.title}</span>
-            <div className='status-container' style={ color[getStatusIndex(param.status)]}>
-              {icon[getStatusIndex(param.status)]}
-              <span >{param.status}</span>
+            <span>{param.PlantName}</span>
+            <div className='status-container' style={ getStyle(param.status).color }>
+              {getStyle(param.status).icon}
+              <span>{param.status && (param.status.charAt(0).toUpperCase() + param.status.slice(1))}</span>
             </div>
-            <span>Date planted: {param.plantDate}</span>
+            <span>Date planted: {formatDate(param.DatePlanted)}</span>
           </div>
       </motion.div>
     )
 }
 
 // ExpandedCard
-function ExpandedCard({ param, setExpanded }) {
+function ExpandedCard({ param, setExpanded, latestSensorData}) {
 
+  console.log(latestSensorData)
     return(
         <motion.div 
             className='ExpandedCard'
-            style={{background: param.color}}
+            style={{borderColor: getStyle(param.status).backgroundColor, borderWidth: '1px', borderStyle: 'solid'}}
             layoutId='expandableCard'
         >
-            <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "#002212" }}>
-                <UilTimes onClick={setExpanded} />
-            </div>
-            <span>{param.title}</span>
+          <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "#002212" }}>
+              <UilTimes onClick={setExpanded} />
+          </div>
+          <span className='plant-name' 
+            style={{borderColor: getStyle(param.status).backgroundColor, 
+              borderWidth: '3px', 
+              borderStyle: 'solid',
+              borderRadius: '10px',
+              padding: '3px 10px'}}>
+            {param.PlantName}
+          </span>
+          <span style={{marginBottom: '5px'}}>
+            Last updated: {formatDateAndTime(latestSensorData.Datetime[0])}
+          </span>
+          
+          <span className='sensors-grid'>
+          {latestSensorData && Object.keys(latestSensorData).length > 0 && sensors.map(sensorName => (
+            <SensorCard
+              key={`SensorCard-${sensorName}`}
+              title={sensorName}
+              unit={dataUnits[sensorName]}
+              min={latestSensorData[sensorName + "_min"][0]}
+              max={latestSensorData[sensorName + "_max"][0]}
+              actual={latestSensorData[sensorName][0]}
+              optimal={latestSensorData[sensorName + "_optimal"][0]}
+              status={latestSensorData.status}
+            />
+          ))} 
+          </span>
         </motion.div>
         
     )
-}
-
-function getStatusIndex(status) {
-  switch (status) {
-    case 'Healthy':
-      return 0;
-    case 'Attention':
-      return 1;
-    case 'Critical':
-      return 2;
-    default:
-      return {};
-  }
-}
-
-function getPic(title) {
-  switch (title) {
-    case 'Bok Choy':
-      return bokChoy;
-    case 'Choy Sum':
-      return choySum;
-    case 'Kai Lan':
-      return kaiLan;
-    default:
-      return {};
-  }
 }
 
 export default PlantCard

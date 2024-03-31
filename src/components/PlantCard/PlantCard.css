@@ -5,14 +5,14 @@
     border-radius: 0.7rem;
     color: #002212;
     position: relative;
-    cursor: pointer;
     padding: 1rem;
     background: #FFF;
     box-shadow: 5px 5px 15px 0px #19302b28;
 }
 
-.CompactCard:hover{
+.CompactCard.Expandable:hover{
     box-shadow: 0px 5px 5px 0px #19302b3d;
+    cursor: pointer;
 }
 
 /*DETAILS IN CARD*/
@@ -63,26 +63,30 @@
 .ExpandedCard {
     position: absolute;
     width: 60%;
-    height: 70vh;
+    height: 60vh;
     z-index: 12;
     left: 13rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     padding: 1rem;
     background: #FFF;
 }
-.ExpandedCard > span:nth-of-type(1) {
+.ExpandedCard > .plant-name {
     color: #003324;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     text-shadow: 0px 0px 15px white;
+    margin-bottom: 10px;
 }
-.ExpandedCard > span:nth-of-type(2) {
-    color: rgb(223, 222, 222);
-    font-size: 16px;
+.ExpandedCard > .sensors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    width: 100%;
+    padding: 0px 20px;
 }
   
 /* Responsive to smaller screen size */

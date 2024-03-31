@@ -1,33 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './YieldCard.css'
 
 import Box from '@mui/material/Box';
 import { BarChart} from '@mui/x-charts/BarChart';
 import ReactApexChart from "react-apexcharts";
 
-const YieldCard = () => {
+const YieldCard = ({monthly, weekly}) => {
 
-  const [data, setData] = useState(data1);
+  const [data, setData] = useState(monthly);
+  const [mthly, setMthly] = useState(true);
 
-  const handleData1Click = () => {
-    setData(data1);
+  const handleMthlyClick = () => {
+    setData(monthly);
+    setMthly(true);
   };
 
-  const handleData2Click = () => {
-    setData(data2);
+  const handleWklyClick = () => {
+    setData(weekly);
+    setMthly(false);
   };
+
+  useEffect(() =>{
+    if (mthly) {
+      setData(monthly);
+    } else {
+      setData(weekly);
+    }
+  }, [monthly, weekly]);
 
   const [state, setState] = useState({
-    series: [{
-      name: 'Bok Choy',
-      data: [44, 55, 41, 67, 22, 43]
-    }, {
-      name: 'Choy Sum',
-      data: [13, 23, 20, 8, 13, 27]
-    }, {
-      name: 'Kai Lan',
-      data: [11, 17, 15, 15, 21, 14]
-    }, ],
     options: {
       chart: {
         type: 'bar',
@@ -85,6 +86,7 @@ const YieldCard = () => {
         // ],
       },
       legend: {
+        show: true,
         position: 'right',
         offsetY: 40
       },
@@ -98,7 +100,7 @@ const YieldCard = () => {
         },
         y: {
             formatter: function (val) {
-                return val + "kg";
+                return val.toFixed(2) + "kg";
               },
         }
       }
@@ -110,8 +112,8 @@ const YieldCard = () => {
       <div className='YieldTopBar'>
         <span className='Title'>Yield</span>
         <div>
-          <button onClick={handleData1Click} className='yield-button'>Monthly</button>
-          <button onClick={handleData2Click} className='yield-button'>Weekly</button>
+          <button onClick={handleMthlyClick} className='yield-button'>Monthly</button>
+          <button onClick={handleWklyClick} className='yield-button'>Weekly</button>
         </div>
       </div>
       <div style={{width:'100%', height:'100%'}}>
@@ -122,76 +124,6 @@ const YieldCard = () => {
   );
 }
 
-const data1 = [{
-  name: 'Bok Choy',
-  data: [
-    {x:'Jan', y: 44}, 
-    {x:'Feb', y: 11}, 
-    {x:'Mar', y: 33}, 
-    {x:'Apr', y: 12}, 
-    {x:'Jun', y: 34}, 
-    {x:'Jul', y: 21},
-    {x:'Aug', y: 15},
-    {x:'Sep', y: 30},
-    {x:'Oct', y: 23},
-    {x:'Nov', y: 26},
-    {x:'Dec', y: 44},
-  ]}, {
-  name: 'Choy Sum',
-  data: [
-    {x:'Jan', y: 44}, 
-    {x:'Feb', y: 11}, 
-    {x:'Mar', y: 33}, 
-    {x:'Apr', y: 12}, 
-    {x:'Jun', y: 34}, 
-    {x:'Jul', y: 21},
-    {x:'Aug', y: 15},
-    {x:'Sep', y: 30},
-    {x:'Oct', y: 23},
-    {x:'Nov', y: 26},
-    {x:'Dec', y: 44},
-  ]}, {
-  name: 'Kai Lan',
-  data: [
-    {x:'Jan', y: 44}, 
-    {x:'Feb', y: 11}, 
-    {x:'Mar', y: 33}, 
-    {x:'Apr', y: 12}, 
-    {x:'Jun', y: 34}, 
-    {x:'Jul', y: 21},
-    {x:'Aug', y: 15},
-    {x:'Sep', y: 30},
-    {x:'Oct', y: 23},
-    {x:'Nov', y: 26},
-    {x:'Dec', y: 44},
-  ]}, 
-];
 
-const data2 = [{
-  name: 'Bok Choy',
-  data: [
-    {x:'W1', y: 44}, 
-    {x:'W2', y: 11}, 
-    {x:'W3', y: 33}, 
-    {x:'W4', y: 12}, 
-    {x:'W5', y: 34}, 
-  ]}, {
-  name: 'Choy Sum',
-  data: [
-    {x:'W1', y: 44}, 
-    {x:'W2', y: 11}, 
-    {x:'W3', y: 33}, 
-    {x:'W4', y: 12}, 
-    {x:'W5', y: 34}, 
-  ]}, {
-  name: 'Kai Lan',
-  data: [
-    {x:'W1', y: 44}, 
-    {x:'W2', y: 11}, 
-    {x:'W3', y: 33}, 
-    {x:'W4', y: 12}, 
-    {x:'W5', y: 34}, 
-  ]}, 
-];
 
 export default YieldCard

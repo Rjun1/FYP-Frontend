@@ -10,44 +10,44 @@
         {
           "timestamp": 1706662800000,
           "predicted": 25.1,
-          "optimal": 25.0,
+          "optimal": 25,
           "actual": 25.1
         },
         {
-            "timestamp": 1706664600000,
-            "predicted": 25.0,
-            "optimal": 25.1,
-            "actual": 25.1
+          "timestamp": 1706664600000,
+          "predicted": 25,
+          "optimal": 25.1,
+          "actual": 25.1
         },
         {
-            "timestamp": 1706666400000,
-            "predicted": 25.3,
-            "optimal": 25.2,
-            "actual": 25.2
+          "timestamp": 1706666400000,
+          "predicted": 25.3,
+          "optimal": 25.2,
+          "actual": 25.2
         },
         {
-            "timestamp": 1706668200000,
-            "predicted": 25.3,
-            "optimal": 25.3,
-            "actual": 25.2
+          "timestamp": 1706668200000,
+          "predicted": 25.3,
+          "optimal": 25.3,
+          "actual": 25.2
         },
         {
-            "timestamp": 1706670000000,
-            "predicted": 25.5,
-            "optimal": 25.4,
-            "actual": 25.4
+          "timestamp": 1706670000000,
+          "predicted": 25.5,
+          "optimal": 25.4,
+          "actual": 25.4
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 25.5,
-            "optimal": 25.5,
-            "actual": 25.6
+          "timestamp": 1706671800000,
+          "predicted": 25.5,
+          "optimal": 25.5,
+          "actual": 25.6
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 25.6,
-            "optimal": 25.5,
-            "actual": 25.6
+          "timestamp": 1706679000000,
+          "predicted": 25.6,
+          "optimal": 25.5,
+          "actual": 25.6
         }
       ],
       "historicalHumidity": [
@@ -273,21 +273,21 @@
       "historicalEC": [
         {
           "timestamp": 1706662800000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
-          "actual": 2.0
+          "actual": 2
         },
         {
           "timestamp": 1706664600000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
           "actual": 1.9
         },
         {
           "timestamp": 1706666400000,
           "predicted": 1.9,
-          "optimal": 2.0,
-          "actual": 2.0
+          "optimal": 2,
+          "actual": 2
         },
         {
           "timestamp": 1706668200000,
@@ -302,16 +302,16 @@
           "actual": 1.9
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 1.8,
-            "optimal": 2.3,
-            "actual": 1.7
+          "timestamp": 1706671800000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.7
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 1.7,
-            "optimal": 2.3,
-            "actual": 1.5
+          "timestamp": 1706679000000,
+          "predicted": 1.7,
+          "optimal": 2.3,
+          "actual": 1.5
         }
       ]
     },
@@ -325,44 +325,44 @@
         {
           "timestamp": 1706662800000,
           "predicted": 25.1,
-          "optimal": 25.0,
+          "optimal": 25,
           "actual": 25.1
         },
         {
-            "timestamp": 1706664600000,
-            "predicted": 25.0,
-            "optimal": 25.1,
-            "actual": 25.1
+          "timestamp": 1706664600000,
+          "predicted": 25,
+          "optimal": 25.1,
+          "actual": 25.1
         },
         {
-            "timestamp": 1706666400000,
-            "predicted": 25.3,
-            "optimal": 25.2,
-            "actual": 25.1
+          "timestamp": 1706666400000,
+          "predicted": 25.3,
+          "optimal": 25.2,
+          "actual": 25.1
         },
         {
-            "timestamp": 1706668200000,
-            "predicted": 25.3,
-            "optimal": 25.3,
-            "actual": 25.1
+          "timestamp": 1706668200000,
+          "predicted": 25.3,
+          "optimal": 25.3,
+          "actual": 25.1
         },
         {
-            "timestamp": 1706670000000,
-            "predicted": 25.5,
-            "optimal": 25.4,
-            "actual": 25.3
+          "timestamp": 1706670000000,
+          "predicted": 25.5,
+          "optimal": 25.4,
+          "actual": 25.3
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 25.5,
-            "optimal": 25.5,
-            "actual": 25.4
+          "timestamp": 1706671800000,
+          "predicted": 25.5,
+          "optimal": 25.5,
+          "actual": 25.4
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 25.6,
-            "optimal": 25.5,
-            "actual": 25.6
+          "timestamp": 1706679000000,
+          "predicted": 25.6,
+          "optimal": 25.5,
+          "actual": 25.6
         }
       ],
       "historicalHumidity": [
@@ -588,21 +588,21 @@
       "historicalEC": [
         {
           "timestamp": 1706662800000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
-          "actual": 2.0
+          "actual": 2
         },
         {
           "timestamp": 1706664600000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
           "actual": 1.9
         },
         {
           "timestamp": 1706666400000,
           "predicted": 1.9,
-          "optimal": 2.0,
-          "actual": 2.0
+          "optimal": 2,
+          "actual": 2
         },
         {
           "timestamp": 1706668200000,
@@ -617,16 +617,16 @@
           "actual": 1.9
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 1.8,
-            "optimal": 2.3,
-            "actual": 1.7
+          "timestamp": 1706671800000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.7
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 1.7,
-            "optimal": 2.3,
-            "actual": 1.5
+          "timestamp": 1706679000000,
+          "predicted": 1.7,
+          "optimal": 2.3,
+          "actual": 1.5
         }
       ]
     },
@@ -640,44 +640,44 @@
         {
           "timestamp": 1706662800000,
           "predicted": 25.1,
-          "optimal": 25.0,
+          "optimal": 25,
           "actual": 25.1
         },
         {
-            "timestamp": 1706664600000,
-            "predicted": 25.0,
-            "optimal": 25.1,
-            "actual": 25.1
+          "timestamp": 1706664600000,
+          "predicted": 25,
+          "optimal": 25.1,
+          "actual": 25.1
         },
         {
-            "timestamp": 1706666400000,
-            "predicted": 25.3,
-            "optimal": 25.2,
-            "actual": 25.2
+          "timestamp": 1706666400000,
+          "predicted": 25.3,
+          "optimal": 25.2,
+          "actual": 25.2
         },
         {
-            "timestamp": 1706668200000,
-            "predicted": 25.3,
-            "optimal": 25.3,
-            "actual": 25.2
+          "timestamp": 1706668200000,
+          "predicted": 25.3,
+          "optimal": 25.3,
+          "actual": 25.2
         },
         {
-            "timestamp": 1706670000000,
-            "predicted": 25.5,
-            "optimal": 25.4,
-            "actual": 25.2
+          "timestamp": 1706670000000,
+          "predicted": 25.5,
+          "optimal": 25.4,
+          "actual": 25.2
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 25.5,
-            "optimal": 25.5,
-            "actual": 25.3
+          "timestamp": 1706671800000,
+          "predicted": 25.5,
+          "optimal": 25.5,
+          "actual": 25.3
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 25.6,
-            "optimal": 25.5,
-            "actual": 25.3
+          "timestamp": 1706679000000,
+          "predicted": 25.6,
+          "optimal": 25.5,
+          "actual": 25.3
         }
       ],
       "historicalHumidity": [
@@ -903,21 +903,21 @@
       "historicalEC": [
         {
           "timestamp": 1706662800000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
-          "actual": 2.0
+          "actual": 2
         },
         {
           "timestamp": 1706664600000,
-          "predicted": 2.0,
+          "predicted": 2,
           "optimal": 1.7,
           "actual": 1.9
         },
         {
           "timestamp": 1706666400000,
           "predicted": 1.9,
-          "optimal": 2.0,
-          "actual": 2.0
+          "optimal": 2,
+          "actual": 2
         },
         {
           "timestamp": 1706668200000,
@@ -932,60 +932,56 @@
           "actual": 1.9
         },
         {
-            "timestamp": 1706671800000,
-            "predicted": 1.8,
-            "optimal": 2.3,
-            "actual": 1.7
+          "timestamp": 1706671800000,
+          "predicted": 1.8,
+          "optimal": 2.3,
+          "actual": 1.7
         },
         {
-            "timestamp": 1706679000000,
-            "predicted": 1.7,
-            "optimal": 2.3,
-            "actual": 1.5
+          "timestamp": 1706679000000,
+          "predicted": 1.7,
+          "optimal": 2.3,
+          "actual": 1.5
         }
       ]
     }
   ],
   "tasks": [
     {
-      "id": "1705977814422",
+      "id": "1708496602702",
       "type": "manual",
-      "content": "23 Jan 10:30 AM: test"
+      "content": "21 Feb 02:15 PM",
+      "task": "test"
     },
     {
-      "id": "1706188666217",
+      "id": "1708496798438",
       "type": "manual",
-      "content": "25 Jan 09:15 PM: fsdfs"
+      "content": "21 Feb 02:15 PM",
+      "task": "test123"
     },
     {
-      "id": "1706188676168",
+      "id": "1708497840492",
       "type": "manual",
-      "content": "25 Jan 09:15 PM: agerahr"
+      "content": "21-02 02:30 PM",
+      "task": "test"
     },
     {
-      "id": "1706188690029",
+      "id": "1708497858349",
       "type": "manual",
-      "content": "26 Jan 09:15 PM: aaaaa"
+      "content": "21 Feb 02:30 PM",
+      "task": "test"
     },
     {
-      "id": "1706188697170",
+      "id": "1708497906096",
       "type": "manual",
-      "content": "27 Jan 09:15 PM: hhhhhhhh"
+      "content": "21 Feb 02:45 PM",
+      "task": "test123"
     },
     {
-      "id": "1706188709496",
+      "id": "1708581634437",
       "type": "manual",
-      "content": "27 Jan 09:15 PM: reha"
-    },
-    {
-      "id": "1706416385335",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: afewfwg"
-    },
-    {
-      "id": "1706416666460",
-      "type": "manual",
-      "content": "28 Jan 12:30 PM: agerahr"
+      "content": "22 Feb 2024 02:00 PM",
+      "task": "test123"
     }
   ],
   "inventoryItems": [
@@ -1006,6 +1002,36 @@
       "item": "Rr",
       "quantity": "2",
       "location": "fa"
+    },
+    {
+      "id": "3231",
+      "item": "seed A",
+      "quantity": "123",
+      "location": "shelf A"
+    },
+    {
+      "id": "6e55",
+      "item": "test123",
+      "quantity": "10",
+      "location": "shelf A"
+    },
+    {
+      "id": "8498",
+      "item": "seed A",
+      "quantity": "1",
+      "location": "Shelf A"
+    },
+    {
+      "id": "5f1f",
+      "item": "",
+      "quantity": "",
+      "location": ""
+    },
+    {
+      "id": "6c96",
+      "item": "",
+      "quantity": "",
+      "location": ""
     }
   ]
 }

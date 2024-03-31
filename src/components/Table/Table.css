@@ -1,13 +1,7 @@
 .Table{
     box-shadow: 5px 5px 15px 0px #19302b2a;
+    flex: 1;
 }
-.MuiTableRow-root > * {
-    padding: 10px;
-}
-
-/* .MuiTableRow-root.MuiTableRow-head > * {
-    font-weight: bold;
-} */
 
 .TableHead{
     background-color: #83ceb7;

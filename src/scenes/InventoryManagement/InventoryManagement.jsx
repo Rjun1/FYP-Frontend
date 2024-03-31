@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   Table,
   TableBody,
@@ -36,63 +35,131 @@ const InventoryManagement = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/inventoryItems');
-        setInventoryItems(response.data);
+        const response = await fetch('https://eefypintegration.azurewebsites.net/inventory/retrieveAllInventoryData');
+        if (!response.ok) {
+          throw new Error('Failed to fetch inventory items');
+        }
+        const data = await response.json();
+        setInventoryItems(data.result);
       } catch (error) {
         console.error('Error fetching inventory items:', error.message);
       }
     };
-
     fetchData();
-  }, []);
-
-  // Filter items based on criteria
-  const filteredItems = () => {
-    if (filterCriteria === 'all') {
-      return inventoryItems;
-    } else if (filterCriteria === 'lowStock') {
-      return inventoryItems.filter(item => parseInt(item.quantity, 10) < 10);
-    } else if (filterCriteria === 'outOfStock') {
-      return inventoryItems.filter(item => parseInt(item.quantity, 10) === 0);
-    }
-
-    // Add more filter conditions as needed
-  };
+  }, [inventoryItems]);
 
   const handleAddItem = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/inventoryItems', newItem);
-      setInventoryItems([...inventoryItems, response.data]);
+      console.log('Adding item:', newItem);
+
+      const response = await fetch('https://eefypintegration.azurewebsites.net/inventory/insertNewInventory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          item: newItem.item,
+          quantity: newItem.quantity,
+          location: newItem.location,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add item');
+      }
+
+      const responseData = await response.json();
+      console.log('Response:', responseData);
+
+      setInventoryItems(prevItems => [...prevItems, responseData]);
+
       setNewItem({ item: '', quantity: '', location: '' });
     } catch (error) {
       console.error('Error adding item:', error.message);
     }
   };
 
-  const handleRemoveItem = (index) => {
-    const updatedItems = [...inventoryItems];
-    updatedItems.splice(index, 1);
-    setInventoryItems(updatedItems);
+  const handleRemoveItem = async (id) => {
+    try {
+      const response = await fetch(`https://eefypintegration.azurewebsites.net/inventory/deleteInventory/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to delete item');
+      }
+  
+      console.log('Item deleted successfully:', id);
+  
+      setInventoryItems(prevItems => prevItems.filter(item => item.id !== id));
+    } catch (error) {
+      console.error('Error removing item:', error.message);
+    }
   };
 
-  const handleEditQuantity = () => {
-    const updatedItems = [...inventoryItems];
-    const currentQuantity = parseInt(updatedItems[selectedItemIndex].quantity, 10);
-    const quantityChange = parseInt(editQuantity, 10);
-
-    updatedItems[selectedItemIndex].quantity =
-      editAction === 'add' ? currentQuantity + quantityChange : currentQuantity - quantityChange;
-
-    setInventoryItems(updatedItems);
-    setIsEditDialogOpen(false);
-    setSelectedItemIndex(null);
-    setEditQuantity('');
-    setEditAction('add'); // Reset to 'add' for next edit
+  const handleEditQuantity = async () => {
+    try {
+      const updatedQuantity = parseInt(editQuantity, 10);
+      if (isNaN(updatedQuantity)) {
+        throw new Error('Invalid quantity');
+      }
+  
+      const requestBody = {
+        id: inventoryItems[selectedItemIndex].id,
+        quantityChange: editAction === 'add' ? updatedQuantity : -updatedQuantity,
+      };
+  
+      console.log('Request Body:', requestBody);
+  
+      const response = await fetch('https://eefypintegration.azurewebsites.net/inventory/updateInventoryQuantity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update quantity');
+      }
+  
+      const responseData = await response.json();
+      console.log('Response:', responseData);
+  
+      const updatedItems = [...inventoryItems];
+      updatedItems[selectedItemIndex].quantity = editAction === 'add' ?
+        updatedItems[selectedItemIndex].quantity + updatedQuantity :
+        updatedItems[selectedItemIndex].quantity - updatedQuantity;
+  
+      setInventoryItems(updatedItems);
+      setIsEditDialogOpen(false);
+      setSelectedItemIndex(null);
+      setEditQuantity('');
+      setEditAction('add');
+    } catch (error) {
+      console.error('Error updating quantity:', error.message);
+    }
   };
 
   const openEditDialog = (index) => {
     setSelectedItemIndex(index);
     setIsEditDialogOpen(true);
+  };
+
+  const filteredItems = () => {
+    let filtered = inventoryItems;
+    if (filterCriteria === 'lowStock') {
+      filtered = filtered.filter(item => parseInt(item.quantity, 10) > 0 && parseInt(item.quantity, 10) < 10);
+
+    } else if (filterCriteria === 'outOfStock') {
+      filtered = filtered.filter(item => parseInt(item.quantity, 10) === 0);
+    }
+
+    if (searchTerm.trim() !== '') {
+      filtered = filtered.filter(item => item.item.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+
+    return filtered;
   };
 
   return (
@@ -128,7 +195,6 @@ const InventoryManagement = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        {/* Filter dropdown */}
         <select
           value={filterCriteria}
           onChange={(e) => setFilterCriteria(e.target.value)}
@@ -136,12 +202,10 @@ const InventoryManagement = () => {
           <option value="all">All Items</option>
           <option value="lowStock">Low Stock</option>
           <option value="outOfStock">Out of Stock</option>
-
         </select>
       </div>
 
       <div className="table-scroll-container">
-        {/* Wrap TableContainer with Box and add boxShadow */}
         <Box boxShadow={3} p={3} borderRadius={8} bgcolor="background.paper" className="table-container">
           <TableContainer component={Paper}>
             <Table aria-label="inventory table">
@@ -154,29 +218,27 @@ const InventoryManagement = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {filteredItems()
-                  .filter((item) => item.item.toLowerCase().includes(searchTerm.toLowerCase()))
-                  .map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell component="th" scope="row">{item.item}</TableCell>
-                      <TableCell align="right">{item.quantity}</TableCell>
-                      <TableCell align="right">{item.location}</TableCell>
-                      <TableCell align="right">
-                        <Button onClick={() => handleRemoveItem(index)}><RemoveIcon /></Button>
-                        <Button onClick={() => openEditDialog(index)}><EditIcon /></Button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                {filteredItems().map((item, index) => (
+                  <TableRow key={index}>
+                    <TableCell component="th" scope="row">{item.item}</TableCell>
+                    <TableCell align="right">{item.quantity}</TableCell>
+                    <TableCell align="right">{item.location}</TableCell>
+                    <TableCell align="right">
+                      <Button onClick={() => handleRemoveItem(item.id)}><RemoveIcon /></Button>
+                      <Button onClick={() => openEditDialog(index)}><EditIcon /></Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </TableContainer>
         </Box>
       </div>
 
-      {/* Edit Quantity Dialog */}
       <Dialog open={isEditDialogOpen} onClose={() => setIsEditDialogOpen(false)}>
         <DialogTitle>Edit Quantity</DialogTitle>
         <DialogContent>
+          {/* Edit quantity dialog content */}
           <TextField
             label="Quantity"
             variant="outlined"
@@ -196,6 +258,7 @@ const InventoryManagement = () => {
           </RadioGroup>
         </DialogContent>
         <DialogActions>
+          {/* Edit quantity dialog actions */}
           <Button onClick={() => setIsEditDialogOpen(false)}>Cancel</Button>
           <Button onClick={handleEditQuantity} color="primary">Save</Button>
         </DialogActions>

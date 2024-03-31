@@ -78,6 +78,10 @@
   background-color: #4ab38e;
 }
 
+.cs-message-input {
+  background-color: #4ab38e;
+}
+
 .chatbot-popup {
   position: fixed;
   bottom: 70px;
@@ -89,6 +93,15 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+}
+
+.cs-main-container {
+  height: 398px;
+  width: 298px;
+}
+
+.hidden {
+  display: none;
 }
 
 .react-chatbot-kit-chat-container {

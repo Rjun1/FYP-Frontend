@@ -9,21 +9,12 @@ import Paper from '@mui/material/Paper';
 
 import './Table.css';
 
-function createData(name, batchNum, datePlanted, harvestDate, expectedYield) {
-  return { name, batchNum, datePlanted, harvestDate, expectedYield };
-}
-
-const rows = [
-  createData('Bok Choy', 1, '1 Jan 2024', '31 Jan 2024', 4.0),
-  createData('Choy Sum', 2, '2 Jan 2024', '1 Feb 2024', 4.3),
-  createData('Kai Lan', 3, '4 Jan 2024', '10 Feb 2024', 6.0),
-];
-
-export default function DenseTable() {
+export default function DenseTable({rows}) {
+  
   return (
     <div className='Table'>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <TableContainer component={Paper} sx={{height:'100%'}}>
+        <Table sx={{ minWidth: 650, height:'100%'}} size="small" aria-label="a dense table">
           <TableHead className='TableHead'>
             <TableRow>
               <TableCell sx={{fontSize:'18px'}}>Crop type</TableCell>
@@ -34,9 +25,9 @@ export default function DenseTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {rows.map((row, index) => (
               <TableRow
-                key={row.name}
+                key={row.name + 'TableRow' + index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row" sx={{fontWeight:'bold'}}>
