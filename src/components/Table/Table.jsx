@@ -21,7 +21,7 @@ export default function DenseTable({rows}) {
               <TableCell sx={{fontSize:'18px'}} align="center">Batch No.</TableCell>
               <TableCell sx={{fontSize:'18px'}} align="center">Date Planted</TableCell>
               <TableCell sx={{fontSize:'18px'}} align="center">Harvest Date</TableCell>
-              <TableCell sx={{fontSize:'18px'}} align="center">Expected Yield (kg)</TableCell>
+              <TableCell sx={{fontSize:'18px'}} align="center">Expected Yield (g)</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -36,7 +36,7 @@ export default function DenseTable({rows}) {
                 <TableCell align="center">{row.batchNum}</TableCell>
                 <TableCell align="center">{row.datePlanted}</TableCell>
                 <TableCell align="center">{row.harvestDate}</TableCell>
-                <TableCell align="center">{row.expectedYield}</TableCell>
+                <TableCell align="center">{row.expectedYield * 1000}</TableCell>
               </TableRow>
             ))}
           </TableBody>

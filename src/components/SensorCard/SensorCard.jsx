@@ -14,12 +14,7 @@ function getBarBackgroundColor(status) {
     return styles[lowercaseStatus];
 }
 function SensorCard({title, unit, min, max, actual, optimal, status}) {
-    console.log(title, 'min', min, 'max', max, 'actual', actual)
-    if (actual < min ) {
-        console.log("TOO LOW")
-    } else if (actual > max) {
-        console.log("TOO HIGH")
-    }
+
     return (
     <span className='SensorCard'>
         <span className='wrapper'>
@@ -28,17 +23,31 @@ function SensorCard({title, unit, min, max, actual, optimal, status}) {
                 <span>{actual} </span>
                 <span style={{fontSize: '13px'}}>{unit}</span>
             </span>
-            <Box sx={{ width: '100%', color: getStyle(status).backgroundColor }}>
-                <LinearProgress
+            {(actual > min &&  actual < max) ? 
+                (<Box sx={{ width: '100%', color: '#6cb6a0' }}>
+                    <LinearProgress
                     variant="determinate"
                     value={(((actual - min) / (max - min)) * 100) > 100 ? 100 : (((actual - min) / (max - min)) * 100)}
                     // color="info"
                     className='progress-bar'
                     color="inherit"
-                    sx={{ height: '16px'}} // Adjust the height to increase the thickness
-                    style={{ borderRadius: '8px', width: '100%', backgroundColor: getBarBackgroundColor(status)}} // Apply a style for border radius
+                    sx={{ height: '16px'}}
+                    style={{ borderRadius: '8px', width: '100%', backgroundColor: '#ecfff8'}}
+                    />
+                    </Box>) :
+                (<Box sx={{ width: '100%', color: getStyle(status).backgroundColor }}>
+                    <LinearProgress
+                    variant="determinate"
+                    value={(((actual - min) / (max - min)) * 100) > 100 ? 100 : (((actual - min) / (max - min)) * 100)}
+                    // color="info"
+                    className='progress-bar'
+                    color="inherit"
+                    sx={{ height: '16px'}}
+                    style={{ borderRadius: '8px', width: '100%', backgroundColor: getBarBackgroundColor(status)}}
                 />
-            </Box>
+                </Box>)
+            }
+            
             <span style={{display: 'flex', justifyContent: 'space-between'}}>
                 <span>{min}</span>
                 {!actual ? <span>null</span> :

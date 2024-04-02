@@ -82,7 +82,6 @@ function ExpandableCompactCard({param, setExpanded}){
 // ExpandedCard
 function ExpandedCard({ param, setExpanded, latestSensorData}) {
 
-  console.log(latestSensorData)
     return(
         <motion.div 
             className='ExpandedCard'

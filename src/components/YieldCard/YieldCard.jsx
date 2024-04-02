@@ -59,6 +59,13 @@ const YieldCard = ({monthly, weekly}) => {
           dataLabels: {
             total: {
               enabled: true,
+              formatter: function(val) {
+                if (val === 0) {
+                  return ''; // Display nothing for 0 values
+                } else {
+                  return val.toFixed(2); // Display other values normally
+                }
+              },
               style: {
                 color: '#002212',
                 fontSize: '15px',
@@ -73,17 +80,6 @@ const YieldCard = ({monthly, weekly}) => {
       },
       xaxis: {
         type: 'catergories',
-        // type: 'datetime',
-        // categories: ['01/01/2011 GMT', '01/02/2011 GMT', '01/03/2011 GMT', '01/04/2011 GMT',
-        //   '01/05/2011 GMT', '01/06/2011 GMT'
-        // ],
-        // categories: ['Jan 1, 2024 3:57:51 PM GMT', 
-        // 'Feb 2, 2024 3:57:51 PM GMT', 
-        // 'Mar 3, 2024 3:57:51 PM GMT', 
-        // 'Apr 4, 2024 3:57:51 PM GMT',
-        // 'May 5, 2024 3:57:51 PM GMT', 
-        // 'Jun 7, 2024 3:57:51 PM GMT'
-        // ],
       },
       legend: {
         show: true,
@@ -100,7 +96,7 @@ const YieldCard = ({monthly, weekly}) => {
         },
         y: {
             formatter: function (val) {
-                return val.toFixed(2) + "kg";
+                return val.toFixed(3) + "kg";
               },
         }
       }

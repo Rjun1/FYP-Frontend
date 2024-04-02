@@ -533,7 +533,7 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
                 <TextField
                   required
                   id="weight-harvested"
-                  label="Weight harvested"
+                  label="Weight harvested (kg)"
                   type="number"
                   value={weightHarvestedStr}
                   onChange={handleWeightHarvestedStrChange}
@@ -682,7 +682,7 @@ function PlantDetailsTopRow({plantDetails, activePlantBatchId, activePlantNames,
           >
             <DialogTitle>Delete a batch</DialogTitle>
             <DialogContent>
-              <div>
+              <div style={{width:'200px'}}>
                 <Autocomplete
                   freeSolo
                   options={activePlantNames}

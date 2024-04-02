@@ -22,30 +22,23 @@ export const dataUnits = {
 "CO2": "(ppm)", 
 "TDS": "(ppm)", 
 "EC": "(mS/cm²)"}
+const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export function formatDate(date) {
-    const dateObj = new Date(date);
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const formattedPlanted = `${dateObj.getDate()} ${monthNames[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+export function formatDate(dateString) {
+    const year = dateString.substring(0, 4);
+    const month = monthNames[parseInt(dateString.substring(5, 7)) - 1];
+    const day = dateString.substring(8, 10);
+    const formattedPlanted = `${day} ${month} ${year}`;
     return formattedPlanted;
 }
 
-export function formatDateAndTime(date) {
-    const dateObj = new Date(date);
-    const options = {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false, // Use 24-hour format
-      };
-    
-      const formattedDate = dateObj.toLocaleDateString('en-SG', options);
-      return formattedDate;
-    // const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    // const formattedPlanted = `${dateObj.getDate()} ${monthNames[dateObj.getMonth()]} ${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
-    // return formattedPlanted;
+export function formatDateAndTime(dateString) {
+    const year = dateString.substring(0, 4);
+    const month = monthNames[parseInt(dateString.substring(5, 7)) - 1];
+    const day = dateString.substring(8, 10);
+    const time = dateString.substring(11, 16);
+    const formattedDate = `${day} ${month} ${year}, ${time}`;
+    return formattedDate;
 }
 
 export function formatInputDateTime(selectedDate, selectedTime) {

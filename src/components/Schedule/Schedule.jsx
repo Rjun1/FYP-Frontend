@@ -77,8 +77,12 @@ const Schedule = () => {
         console.error('Error fetching tasks:', error.message);
       }
     };
-
-    fetchTasks();
+    const intervalId = setInterval(() => {
+      fetchTasks();
+    }, 3000); // 1000 milliseconds = 1 second
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   const handleDelete = async (scheduleId) => {

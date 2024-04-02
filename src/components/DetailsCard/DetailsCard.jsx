@@ -40,7 +40,7 @@ function DetailsCard({title, unit, min, max, actual, optimal, datetime}) {
           // }
         },
       },
-      colors: ['#6cb6a0', '#9be6cf', '#26725e'],
+      colors: ['#9DA8A1', '#9DA8A1', '#26725e'],
       dataLabels: {
         enabled: false
       },
