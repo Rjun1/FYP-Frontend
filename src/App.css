@@ -6,6 +6,7 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
   color: #002212;
+  overflow-y: auto;
 }
 
 .AppGlass{
@@ -56,12 +57,14 @@
 .chat-button-container {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 50px;
   z-index: 1000; 
+  width: 50px;
 }
 
 .chat-button {
-  background-color: #5ccc9d;
+  background-color: #065c4a;
+  box-shadow: 3px 3px 5px rgba(67, 78, 76, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
@@ -71,33 +74,35 @@
   cursor: pointer;
   transition: background-color 0.3s;
   margin-right: 40px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chat-button:hover {
-  background-color: #4ab38e;
+  background-color: #003324;
 }
 
 .cs-message-input {
-  background-color: #4ab38e;
+  background-color: #065c4a !important;
 }
 
 .chatbot-popup {
   position: fixed;
-  bottom: 70px;
+  bottom: 73px;
   right: 50px; 
   width: 300px; 
   height: 400px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* background-color: white; */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 5px; */
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.151);
   z-index: 9999;
 }
 
 .cs-main-container {
-  height: 398px;
-  width: 298px;
+  height: 400px;
+  width: 300px;
 }
 
 .hidden {
@@ -196,3 +201,46 @@
   transform: translateY(-50%); 
 }
 
+/* Style for user's message bubble */
+section[aria-label="user"] .cs-message__content {
+  border-radius:  .7em .7em 0 .7em;
+  background-color: #065c4a;
+  color: #ecfff8;
+}
+
+/* Style for ChatGPT message bubble */
+section[aria-label="ChatGPT"] {
+  margin-left: 0px !important;
+}
+section[aria-label="ChatGPT"] .cs-message__content {
+  border-radius:  .7em .7em .7em 0;
+  background-color: #9be6cf;
+  color: #002212;
+}
+
+/* Input box */
+.cs-message-input__content-editor-wrapper {
+  background-color: #f2fffb;
+}
+
+.cs-message-input__content-editor {
+  background-color: #f2fffb;
+  color:  #002212 !important;
+}
+.cs-message-input__content-editor::before {
+  background-color: #f2fffb;
+  color:  #77817b !important;
+}
+
+/* Top message box */
+.scrollbar-container.cs-message-list__scroll-wrapper.ps {
+  background-color: #f2fffb;
+  padding: 0.8em 0.8em 0 .8em;
+}
+
+.cs-button.cs-button--send {
+  color: #f2fffb;
+}
+.cs-button.cs-button--attachment {
+  color: #f2fffb;
+}

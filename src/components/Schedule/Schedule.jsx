@@ -60,6 +60,11 @@
 
 
 import React, { useState, useEffect } from 'react';
+import './Schedule.css'
+
+import {
+  UilTimes,
+} from "@iconscout/react-unicons";
 
 const Schedule = () => {
   const [tasks, setTasks] = useState([]);
@@ -109,19 +114,20 @@ const Schedule = () => {
     <div className="ScheduleContainer">
       {tasks.map((task) => (
         <div key={task.ScheduleId} className={`task-item ${task.Status ? 'done' : ''}`}>
-          <div>{task.Datetime}</div>
-          {task.type === 'manual' ? (
-            <div>{task.ScheduleDescription}</div>
-          ) : (
-            <>
-              <div>{task.content}</div>
-              <div>Task: {task.Task}</div>
-            </>
-          )}
+          <div className='task-content'>
+            {task.type === 'manual' ? (
+              <div>{task.ScheduleDescription}</div>
+            ) : (
+              <div>
+                <div>{task.content}</div>
+                <div>Task: {task.Task}</div>
+              </div>
+            )}
+          </div>
           {!task.Status && (
-            <>
-              <button onClick={() => handleDelete(task.ScheduleId)}>Delete</button>
-            </>
+              <div style={{ cursor: "pointer", color: "#065c4a", width: '24px', alignContent: 'center'}}>
+                <UilTimes onClick={() => handleDelete(task.ScheduleId)} />
+              </div>
           )}
         </div>
       ))}

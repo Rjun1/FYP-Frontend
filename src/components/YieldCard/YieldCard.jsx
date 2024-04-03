@@ -63,7 +63,7 @@ const YieldCard = ({monthly, weekly}) => {
                 if (val === 0) {
                   return ''; // Display nothing for 0 values
                 } else {
-                  return val.toFixed(2); // Display other values normally
+                  return val.toFixed(1); // Display other values normally
                 }
               },
               style: {
