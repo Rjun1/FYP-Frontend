@@ -353,6 +353,11 @@ const App = () => {
     } catch (error) {
       console.error('Error handling manual task submit:', error.message);
     }
+    retrieveTasksFromServer().then(result => {
+      setManualEvents(result);
+    }).catch(error => {
+      console.error('Error retrieving tasks:', error.message);
+    });
   };
   
   const getListData = (value, manualEvents) => {
