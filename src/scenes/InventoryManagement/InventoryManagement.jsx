@@ -206,7 +206,7 @@ const InventoryManagement = () => {
       </div>
 
       <div className="table-scroll-container">
-        <Box boxShadow={3} p={3} borderRadius={8} bgcolor="background.paper" className="table-container">
+        <Box bgcolor="background.paper" className="table-container">
           <TableContainer component={Paper}>
             <Table aria-label="inventory table">
               <TableHead>

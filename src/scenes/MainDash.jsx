@@ -65,114 +65,6 @@ const MainDash = () => {
     const urlPlantYieldByWeek = 'https://eefypintegration.azurewebsites.net/plant/plantYieldByWeek'
     const urlEnvironmentalData = 'https://eefypintegration.azurewebsites.net/energyConsumption/getEnergyConsumptionValue'
 
-    // const fetchBackendData = async () => {
-    //     fetch(urlEnvironmentalData)
-    //         .then(res => {
-    //             if (!res.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             return res.json();
-    //         })
-    //         .then(data => {setStats(data["result"]);})
-    //         .catch(error => {
-    //             console.error('Error fetching environmental data:', error);
-    //         });
-    //     fetch(urlLatestActiveSensorData)
-    //         .then(res => {
-    //             if (!res.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             return res.json();
-    //         })
-    //         .then(data => {setLatestActiveSensorData(data["result"]);})
-    //         .catch(error => {
-    //             console.error('Error fetching latest active sensor data:', error);
-    //         });
-    //     fetch(urlPlantYieldByWeek)
-    //         .then(res => {
-    //             if (!res.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             return res.json();
-    //         })
-    //         .then(data => {setPlantYieldByWeek(data["result"]);})
-    //         .catch(error => {
-    //             console.error('Error fetching plant yield by week:', error);
-    //         });
-    //     fetch(urlPlantYieldByMonth)
-    //         .then(res => {
-    //             if (!res.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             return res.json();
-    //         })
-    //         .then(data => {setPlantYieldByMonth(data["result"]);})
-    //         .catch(error => {
-    //             console.error('Error fetching plant yield by month:', error);
-    //         });
-        
-    //     fetch(urlActiveBatchInfoAndYield)
-    //         .then(res => {
-    //             if (!res.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             return res.json();
-    //         })
-    //         .then(data => {setActiveBatchInfo(data["result"]);})
-    //         .catch(error => {
-    //             console.error('Error fetching active batch info and yield:', error);
-    //         });
-    // }
-    
-
-    // useEffect(() => {
-    //     fetchBackendData();
-    //     const intervalId = setInterval(() => {
-    //         // console.log("latestActiveSensorData", latestActiveSensorData.length,
-    //         // "activeBatchInfo", activeBatchInfo.length,
-    //         // "plantYieldByMonth", Object.keys(plantYieldByMonth).length,
-    //         // "plantYieldByWeek", Object.keys(plantYieldByWeek).length,
-    //         // "stats", Object.keys(stats).length)
-    //         if (latestActiveSensorData.length === 0 && 
-    //             activeBatchInfo.length === 0 && 
-    //             Object.keys(plantYieldByMonth).length === 0 && 
-    //             Object.keys(plantYieldByWeek).length === 0 && 
-    //             Object.keys(stats).length === 0) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //                 "latestActiveSensorData", latestActiveSensorData.length,
-    //                 "activeBatchInfo", activeBatchInfo.length,
-    //                 "plantYieldByMonth", Object.keys(plantYieldByMonth).length,
-    //                 "plantYieldByWeek", Object.keys(plantYieldByWeek).length,
-    //                 "stats", Object.keys(stats).length)
-    //             // console.log("latestActiveSensorData", latestActiveSensorData)
-    //             // console.log("activeBatchInfo", activeBatchInfo)
-    //             // console.log("plantYieldByMonth", plantYieldByMonth)
-    //             // console.log("plantYieldByWeek", plantYieldByWeek)
-    //             // console.log("stats", stats)
-    //             fetchBackendData();
-    //         }
-    //     }, 10000); // 1000 milliseconds = 1 second
-    
-    //     // const secondIntervalId = setInterval(() => {
-    //     //     if (latestActiveSensorData.length !== 0 && 
-    //     //         activeBatchInfo.length !== 0 && 
-    //     //         Object.keys(plantYieldByMonth).length !== 0 && 
-    //     //         Object.keys(plantYieldByWeek).length !== 0 && 
-    //     //         Object.keys(stats).length !== 0) {
-    //     //         console.log("!!!!!!!!!!! Running second fetch type")
-    //     //         fetchBackendData();
-    //     //     }
-    //     // }, 10000); // 30000 milliseconds = 30 seconds
-
-    //     return () => {
-    //         clearInterval(intervalId);
-    //         // clearInterval(secondIntervalId);
-    //     };
-    // }, []);
-    
-
-
-
     const fetchEnvironmentalData = async () => {
         try {
           console.log("Fetching environmental data...");
@@ -288,66 +180,6 @@ const MainDash = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-    
-
-    // useEffect(() => {
-    //     // fetchEnvironmentalData();
-    //     // fetchActiveBatchInfoAndYield();
-    //     // fetchPlantYieldByMonth();
-    //     // fetchplantYieldByWeek();
-    //     // fetchLatestActiveSensorData();
-    //     const intervalId = setInterval(() => {
-    //         console.log("latestActiveSensorData", latestActiveSensorData.length,
-    //         "activeBatchInfo", activeBatchInfo.length,
-    //         "plantYieldByMonth", Object.keys(plantYieldByMonth).length,
-    //         "plantYieldByWeek", Object.keys(plantYieldByWeek).length,
-    //         "stats", Object.keys(stats).length)
-    //         if (Object.keys(stats).length === 0) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //             "stats", Object.keys(stats).length)
-    //             fetchEnvironmentalData();
-    //         }
-    //         if (activeBatchInfo.length === 0) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //                 "activeBatchInfo", activeBatchInfo.length)
-    //             fetchActiveBatchInfoAndYield();
-    //         }
-    //         if (Object.keys(plantYieldByMonth).length === 0) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //                 "plantYieldByMonth", Object.keys(plantYieldByMonth).length)
-    //             fetchPlantYieldByMonth();
-    //         }
-    //         if (Object.keys(plantYieldByWeek).length === 0) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //                 "plantYieldByWeek", Object.keys(plantYieldByWeek).length)
-    //                 fetchplantYieldByWeek();
-    //         }
-    //         if (latestActiveSensorData.length === 0 ) {
-    //             console.log("!!!!!!!!!!! !!!!!!!!!!! Running first fetch type !!!!!!!!!!!", 
-    //                 "latestActiveSensorData", latestActiveSensorData.length)
-    //             fetchLatestActiveSensorData();
-    //         }
-    //     }, 1000); // 1000 milliseconds = 1 second
-    
-    //     const secondIntervalId = setInterval(() => {
-    //         if (latestActiveSensorData.length !== 0 && 
-    //             activeBatchInfo.length !== 0 && 
-    //             Object.keys(plantYieldByMonth).length !== 0 && 
-    //             Object.keys(plantYieldByWeek).length !== 0 && 
-    //             Object.keys(stats).length !== 0) {
-    //             console.log("!!!!!!!!!!! Running second fetch type")
-    //             fetchBackendData();
-    //         }
-    //     }, 10000); // 30000 milliseconds = 30 seconds
-
-    //     return () => {
-    //         clearInterval(intervalId);
-    //         clearInterval(secondIntervalId);
-    //     };
-    // }, []);
-
-
-
 
     // Prepare data for the table
     useEffect(() => {
@@ -373,7 +205,7 @@ const MainDash = () => {
             plantData.Month.forEach((month, index) => {
             newData.data.push({
                 x: month,
-                y: plantData.WeightHarvested[index].toFixed(3) || 0
+                y: (plantData.WeightHarvested[index] * 1000) || 0
             });
             });
         
@@ -394,7 +226,7 @@ const MainDash = () => {
             plantData.Week.forEach((week, index) => {
             newData.data.push({
                 x: `W${week}`,
-                y: plantData.WeightHarvested[index].toFixed(3) || 0
+                y: (plantData.WeightHarvested[index] * 1000) || 0
             });
             });
         

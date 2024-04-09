@@ -63,7 +63,7 @@ const YieldCard = ({monthly, weekly}) => {
                 if (val === 0) {
                   return ''; // Display nothing for 0 values
                 } else {
-                  return val.toFixed(1); // Display other values normally
+                  return val.toFixed(0); // Display other values normally
                 }
               },
               style: {
@@ -81,6 +81,13 @@ const YieldCard = ({monthly, weekly}) => {
       xaxis: {
         type: 'catergories',
       },
+      yaxis: {
+        labels: {
+          formatter: function(val) {
+              return val.toFixed(0);
+          },
+        }
+      },
       legend: {
         show: true,
         position: 'right',
@@ -96,7 +103,7 @@ const YieldCard = ({monthly, weekly}) => {
         },
         y: {
             formatter: function (val) {
-                return val.toFixed(3) + "kg";
+                return val.toFixed(0) + "g";
               },
         }
       }
