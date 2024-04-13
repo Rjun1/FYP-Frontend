@@ -38,54 +38,6 @@ const ColorButton = styled(Button)(() => ({
 
 const PlantDetails = () => {
 
-  // Fetch data from local json file
-  // const [plantDetails, setPlantDetails] = useState([])
-  // const [sensorData, setSensorData] = useState({})
-  // const [selectedPlantIndex, setSelectedPlantIndex] = useState(0)
-  // const [selectedSensorData, setSelectedSensorData] = useState({})
-  
-  // const fetchData = () => {
-  //   // Fetch plant batch info
-  //   fetch('http://localhost:4000/PlantData')
-  //       .then(res => res.json())
-  //       .then(data => {setPlantDetails(data);})
-  //       .catch(e => console.log(e.message));
-  //   // Fetch historical plant sensor data
-  //   fetch('http://localhost:4001/result')
-  //       .then(res => res.json())
-  //       .then(data => {setSensorData(data);})
-  //       .catch(e => console.log(e.message));
-  // }
-  // useEffect(() => {
-  //     fetchData();
-  // }, []);
-  // useEffect(() => {
-  //   console.log('new plantDetails',plantDetails)
-  // }, [plantDetails]);
-  // useEffect(() => {
-  //   console.log('new sensorData',sensorData)
-  // }, [sensorData]);
-  
-
-  
-
-  // const currentPlant = plantDetails[selectedPlantIndex];
-  // const handlePlantChange = (index) => {
-  //   setSelectedPlantIndex(index);
-  // };
-  
-  // const getSelectedSensorData = (currentPlant) => {
-  //   console.log('plantDetails.length', plantDetails.length)
-  //   if (plantDetails.length != 0) {
-  //     var selectedPlantName = currentPlant.PlantName;
-  //     setSelectedSensorData(sensorData[selectedPlantName]);
-  //     console.log(selectedPlantName, '--',sensorData[selectedPlantName])
-  //   } 
-  // }
-  // useEffect(() => {
-  //   getSelectedSensorData(currentPlant);
-  // }, [sensorData, selectedPlantIndex]);
-
   // Fetch data from cloud
   const urlActivePlantBatchSensorData = 'https://eefypintegration.azurewebsites.net/plant/retrieveActivePlantBatchSensorData'
   const urlActiveBatchInfoAndYield = 'https://eefypintegration.azurewebsites.net/plant/activePlantBatchInfoAndYield'
@@ -104,17 +56,6 @@ const PlantDetails = () => {
     setAvailPlantTypes(newAvailPlantTypes)
   }, [activePlantNames]);
 
-  // const fetchBackendData = () => {
-  //   fetch(urlActiveBatchInfoAndYield)
-  //       .then(res => res.json())
-  //       .then(data => {setPlantDetails(data["result"]);})
-  //       .catch(e => console.log(e.message));
-  //   fetch(urlActivePlantBatchSensorData)
-  //       .then(res => res.json())
-  //       .then(data => {setSensorData(data["result"]);})
-  //       .catch(e => console.log(e.message));
-    
-  // }
   const fetchBackendData = () => {
     fetch(urlActiveBatchInfoAndYield)
         .then(res => {
@@ -153,24 +94,6 @@ const PlantDetails = () => {
 
     return () => clearInterval(intervalId); // Clean up the interval on component unmount
   }, []);
-
-  // const fetchData = () => {
-  //   // Fetch plant batch info
-  //   fetch('http://localhost:4000/PlantData')
-  //       .then(res => res.json())
-  //       .then(data => {setPlantDetails(data);})
-  //       .catch(e => console.log(e.message));
-  // }
-  // useEffect(() => {
-  //     fetchData();
-  // }, []);
-  
-  // useEffect(() => {
-  //   console.log('new plantDetails',plantDetails)
-  // }, [plantDetails]);
-  // useEffect(() => {
-  //   console.log('new sensorData',sensorData)
-  // }, [sensorData]);
   
 
   const handlePlantChange = (index) => {
@@ -178,20 +101,16 @@ const PlantDetails = () => {
   };
   
   const getSelectedSensorData = (currentPlant) => {
-    // console.log('(getSelectedSensorData) plantDetails.length', plantDetails.length)
-    // console.log('(getSelectedSensorData) plantDetails', plantDetails)
-    // console.log('(getSelectedSensorData) plantDetails', currentPlant)
     if (plantDetails.length != 0 && currentPlant) {
       var selectedPlantName = currentPlant.PlantName;
       setSelectedSensorData(sensorData[selectedPlantName]);
-      // console.log(selectedPlantName, '--',sensorData[selectedPlantName])
     } 
   }
   useEffect(() => {
     setCurrentPlant(plantDetails[selectedPlantIndex]);
-    getSelectedSensorData(currentPlant);
     setActivePlantBatchId(plantDetails.map(plant => plant.PlantBatchId));
     setActivePlantNames(plantDetails.map(plant => plant.PlantName));
+    getSelectedSensorData(currentPlant);
   }, [sensorData, selectedPlantIndex]);
 
   // Grow button to add a new batch
@@ -287,7 +206,7 @@ const PlantDetails = () => {
         {plantDetails.length === 0 && 
           (<div>No Plants Planted</div>)}
       </div>
-      {currentPlant && selectedSensorData && Object.keys(currentPlant).length !== 0 && Object.keys(selectedSensorData).length !== 0 && (
+      {currentPlant && Object.keys(currentPlant).length !== 0 && (
         <PlantDetailPage plantDetails={plantDetails} activePlantBatchId={activePlantBatchId} activePlantNames={activePlantNames} details={currentPlant} sensorData={selectedSensorData}/>)}
       {plantDetails.length === 0 && 
         (<div> 
