@@ -50,7 +50,7 @@ function SensorCard({title, unit, min, max, actual, optimal, status}) {
             
             <span style={{display: 'flex', justifyContent: 'space-between'}}>
                 <span>{min}</span>
-                {!actual ? <span>null</span> :
+                {(!actual && actual !== 0) ? <span>null</span> :
                     (actual < min ? 
                         (<span>Too <span style={{fontWeight:'bold'}}>LOW</span></span>) :
                         (actual > max ?
