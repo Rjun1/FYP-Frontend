@@ -11,7 +11,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'; // Import necessary components from chat-ui-kit-react
 import './App.css';
 
-const OPENAI_API_KEY = ""; 
+const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY; 
 
 function App() {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
