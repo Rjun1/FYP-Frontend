@@ -69,25 +69,43 @@ import {
 const Schedule = () => {
   const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const response = await fetch('https://eefypintegration.azurewebsites.net/calendar/retrieveSchedules');
-        if (!response.ok) {
-          throw new Error('Failed to fetch tasks');
-        }
-        const data = await response.json();
-        setTasks(data.result);
-      } catch (error) {
-        console.error('Error fetching tasks:', error.message);
+  let initialIntervalId;
+  let subsequentIntervalId;
+  const fetchTasks = async () => {
+    try {
+      const response = await fetch('https://eefypintegration.azurewebsites.net/calendar/retrieveSchedules');
+      if (!response.ok) {
+        throw new Error('Failed to fetch tasks');
       }
-    };
-    const intervalId = setInterval(() => {
-      fetchTasks();
-    }, 3000); // 1000 milliseconds = 1 second
+      const data = await response.json();
+      setTasks(data.result);
+      console.log("Tasks fetched successfully.");
+      return true;
+    } catch (error) {
+      console.error('Error fetching tasks:', error.message);
+      return false;
+    }
+  };
+
+  const fetchData = async () => {
+    const taskSuccess = fetchTasks();
+
+    if (taskSuccess) {
+        console.log("Task data fetched successfully. Switching to 10-second interval.");
+        clearInterval(initialIntervalId);
+        clearInterval(subsequentIntervalId);
+        subsequentIntervalId = setInterval(fetchData, 10000);
+    }
+};
+
+  useEffect(() => {
+    fetchData()
+    initialIntervalId = setInterval(fetchData, 2000);
+
     return () => {
-      clearInterval(intervalId);
-    };
+            clearInterval(initialIntervalId);
+            clearInterval(subsequentIntervalId);
+        };
   }, []);
 
   const handleDelete = async (scheduleId) => {
