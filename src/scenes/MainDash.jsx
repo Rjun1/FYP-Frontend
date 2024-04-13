@@ -146,39 +146,35 @@ const MainDash = () => {
         }
     };
 
-    // useEffect to fetch data initially and setup intervals
-  useEffect(() => {
-    let intervalId;
-    const fetchData = async () => {
-        const environmentalDataSuccess = await fetchEnvironmentalData();
-        
-        const activeBatchInfoSuccess = await fetchActiveBatchInfoAndYield();
-        
-        
-        const plantYieldByMonthSuccess = await fetchPlantYieldByMonth();
-        const plantYieldByWeekSuccess = await fetchPlantYieldByWeek();
+    let initialIntervalId;
+    let subsequentIntervalId;
 
-        const latestActiveSensorDataSuccess = await fetchLatestActiveSensorData();
+    const fetchData = async () => {
+        const environmentalDataSuccess = fetchEnvironmentalData();
+        const activeBatchInfoSuccess = fetchActiveBatchInfoAndYield();
+        const plantYieldByMonthSuccess = fetchPlantYieldByMonth();
+        const plantYieldByWeekSuccess = fetchPlantYieldByWeek();
+        const latestActiveSensorDataSuccess = fetchLatestActiveSensorData();
 
         if (activeBatchInfoSuccess && latestActiveSensorDataSuccess && environmentalDataSuccess && plantYieldByMonthSuccess && plantYieldByWeekSuccess) {
             console.log("All data points fetched successfully. Switching to 10-second interval.");
-            clearInterval(intervalId);
-            intervalId = setInterval(async () => {
-                fetchEnvironmentalData();
-                fetchActiveBatchInfoAndYield();
-                fetchPlantYieldByMonth();
-                fetchPlantYieldByWeek();
-                fetchLatestActiveSensorData();
-        }, 10000);
-      }
+            clearInterval(initialIntervalId);
+            clearInterval(subsequentIntervalId);
+            subsequentIntervalId = setInterval(fetchData, 10000);
+        }
     };
 
-    // Initial fetch loop
-    intervalId = setInterval(fetchData, 3000);
+    useEffect(() => {
+        // Initial fetch loop with 2-second interval
+        fetchData()
+        initialIntervalId = setInterval(fetchData, 2000);
 
-    // Cleanup interval on unmount
-    return () => clearInterval(intervalId);
-  }, []);
+        // Cleanup initial interval on unmount
+        return () => {
+            clearInterval(initialIntervalId);
+            clearInterval(subsequentIntervalId);
+        };
+    }, []);
 
 
     // Prepare data for the table
