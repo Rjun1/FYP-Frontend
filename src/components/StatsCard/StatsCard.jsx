@@ -15,7 +15,7 @@ const StatsCard = (props) => {
 
   // Format the value
   const value = props.value
-  console.log("statsCard", value)
+  // console.log("statsCard", value)
   var formattedValue = [value.toFixed(2), ''];
   if (props.value > 100 || props.value < 0.1) {
     formattedValue = formatScientificNotation(props.value, 2);
