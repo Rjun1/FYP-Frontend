@@ -106,6 +106,13 @@ const PlantDetails = () => {
       setSelectedSensorData(sensorData[selectedPlantName]);
     } 
   }
+
+  useEffect(() => {
+    setActivePlantBatchId(plantDetails.map(plant => plant.PlantBatchId));
+    setActivePlantNames(plantDetails.map(plant => plant.PlantName));
+    getSelectedSensorData(currentPlant);
+  }, [currentPlant]);
+
   useEffect(() => {
     setCurrentPlant(plantDetails[selectedPlantIndex]);
     setActivePlantBatchId(plantDetails.map(plant => plant.PlantBatchId));
