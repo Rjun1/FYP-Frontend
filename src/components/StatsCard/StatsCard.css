@@ -14,7 +14,6 @@
 .LeftSide{
     display: flex;
     gap: 10px;
-    width: 100%
 }
 .Animation{
     display: flex;
@@ -30,7 +29,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 100%;
 }
 .Value>span:nth-child(1){
     font-size: 35px;
